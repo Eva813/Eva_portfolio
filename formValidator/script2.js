@@ -82,3 +82,45 @@ $("#password").keyup(function (e) {
 
 
 })
+
+$("#password2").keyup(function (e) {
+
+  e.preventDefault();
+  var password2_input = $("#password2").val();
+  var message_password2 = $("#password2").siblings('small').first();
+  if (password2_input.length < 8) {
+
+    $(this).css('border-color', '#e74c3c');
+
+    message_password2.text("Password2 must be at least 8 characters").css('visibility', 'visible');
+  } else if (password2_input.length > 16) {
+
+    $(this).css('border-color', '#e74c3c');
+
+    message_password2.text("Password2 must be at less than 16 characters").css('visibility', 'visible');
+  } else {
+
+    $(this).css('border-color', '#2ecc71');
+
+    message_password2.css('visibility', 'hidden')
+  }
+
+
+})
+
+
+
+// check password match
+$("#form").submit(function (e) {
+  e.preventDefault();
+  var password_input = $("#password").val();
+  var password2_input = $("#password2").val();
+  var message_password2 = $("#password2").siblings('small').first();
+
+  if (password_input !== password2_input) {
+    $("#password2").css('border-color', '#e74c3c');
+    message_password2.text('Password do not match').css('visibility', 'visible');
+  }
+
+})
+
