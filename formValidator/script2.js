@@ -23,3 +23,32 @@ $("#email").keyup(function (e) {
   }
 
 });
+
+
+// 使用者名稱
+$("#username").keyup(function () {
+  var username_input = $("#username").val();
+  var message_username = $("#username").siblings('small').first();
+
+  if (username_input.length < 3) {
+
+    $(this).css('border-color', '#e74c3c');
+
+    message_username.text("Username must be at least 3 characters").css('visibility', 'visible');
+
+
+  } else if (username_input.length > 15) {
+
+    $(this).css('border-color', '#e74c3c');
+
+    message_username.text("Username must be at less than 15 characters").css('visibility', 'visible');
+
+  } else {
+
+    $(this).css('border-color', '#2ecc71');
+
+    message_username.css('visibility', 'hidden');
+
+  }
+
+})
