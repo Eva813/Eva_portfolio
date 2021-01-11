@@ -1,5 +1,5 @@
 
-$("#currency-one").change(function caculate() {
+function calculate() {
 
   var currency_one = $("#currency-one").val();
   var currency_two = $('#currency-two').val();
@@ -15,20 +15,23 @@ $("#currency-one").change(function caculate() {
       const rate = data.conversion_rates[currency_two];
       console.log(rate);
       $('#rate').append(`1 ${currency_one} = ${rate} ${currency_two}`);
-      amountTwo = (amountOne * rate).toFixed(2);
-      console.log(amountTwo);
+      $('#amount-two').val((amountOne * rate).toFixed(2));
     }
-  }).then(function (res) {
-    //response <-> request
-
-
   })
-  // .done(function (msg) {
-  //   console.log(msg);
-  // });
-})
 
-//抓取api的資料
+
+}
+
+$("#currency-one").change(function () {
+  $("#rate").html("");
+  calculate();
+})
+//抓取amountone
+
+calculate();
+
+
+
 
 
 
