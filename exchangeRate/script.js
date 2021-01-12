@@ -13,9 +13,9 @@ function calculate() {
     method: 'get',//get,post,put
     dataType: 'json',
     success: function (data) {
-      console.log(data);
+      //console.log(data);
       const rate = data.conversion_rates[currency_two];
-      console.log(rate);
+      //console.log(rate);
       $('#rate').append(`1 ${currency_one} = ${rate} ${currency_two}`);
       $('#amount-two').val((amountOne * rate).toFixed(2));
     }
@@ -31,6 +31,25 @@ $("#currency-one").change(function () {
 //抓取amountone
 $("#amount-one").on("input", function () {
   $("#rate").html("");
+  calculate();
+})
+
+$("#currency-two").change(function () {
+  $("#rate").html("");
+  calculate();
+})
+
+//抓取amountTwo
+$("#amount-two").on("input", function () {
+  $("#rate").html("");
+  calculate();
+})
+
+//swap按鈕
+$('#swap').click(function () {
+  let temp = $("#currency-one").val();//設一個變數來存放currency-one
+  $("#currency-one").val($("#currency-two").val());
+  $("#currency-two").val(temp);
   calculate();
 })
 
