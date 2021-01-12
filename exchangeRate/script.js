@@ -47,6 +47,7 @@ $("#amount-two").on("input", function () {
 
 //swap按鈕
 $('#swap').click(function () {
+  $("#rate").html("");
   let temp = $("#currency-one").val();//設一個變數來存放currency-one
   $("#currency-one").val($("#currency-two").val());
   $("#currency-two").val(temp);
