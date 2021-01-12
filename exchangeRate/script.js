@@ -6,8 +6,10 @@ function calculate() {
   var amountOne = $('#amount-one').val();
   var amountTwo = $('#amount-two').val();
 
+  //https://app.exchangerate-api.com/dashboard/confirmed
+
   $.ajax({
-    url: `https://v6.exchangerate-api.com/v6/06f04b805743079a1966771a/latest/${currency_one}`,
+    url: `https://v6.exchangerate-api.com/v6/06f04b805743079a1966771a/latest/${currency_one}`,  //注意符號
     method: 'get',//get,post,put
     dataType: 'json',
     success: function (data) {
@@ -27,6 +29,10 @@ $("#currency-one").change(function () {
   calculate();
 })
 //抓取amountone
+$("#amount-one").on("input", function () {
+  $("#rate").html("");
+  calculate();
+})
 
 calculate();
 
