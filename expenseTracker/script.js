@@ -16,7 +16,6 @@ function addTransactionDOM(transaction) {
 
   const item = $('<li></li>').appendTo('#list');
 
-
   //add class based on value
   item.addClass(transaction.amount < 0 ? 'minus' : 'plus');
   item.html(`${transaction.text} <span> ${sign}${Math.abs(transaction.amount)}</span> <button class="delete-btn">x</button>`);
@@ -25,14 +24,23 @@ function addTransactionDOM(transaction) {
 
 }
 
-//更新
+//收入、支出位置可以更新
+//* 拿到數量值的變數，並創造新陣列
+function updateValue() {
+  const amounts = transactions.map(function (transaction) {
+    return transaction.amount
+  })
 
+  //計算加總
+
+
+}
 
 //init 
 function init() {
   $('#list').html(''); //清除list
   transactions.forEach(addTransactionDOM);
-
+  updateValue();
 }
 
 
