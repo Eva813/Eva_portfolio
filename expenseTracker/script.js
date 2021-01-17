@@ -6,6 +6,7 @@ const dummyTransactions = [
   { id: 2, text: 'salary', amount: 200 },
   { id: 3, text: 'book', amount: -50 }, { id: 4, text: 'camera', amount: 20 }
 ];
+
 let transactions = dummyTransactions;
 
 //將 交易項目(list)，加入dom列表中
@@ -13,7 +14,6 @@ function addTransactionDOM(transaction) {
   const sign = transaction.amount < 0 ? '-' : '+';
 
   //創造html,li那一段
-
   const item = $('<li></li>').appendTo('#list');
 
   //add class based on value
@@ -30,11 +30,15 @@ function updateValue() {
   const amounts = transactions.map(function (transaction) {
     return transaction.amount
   })
+  var total = 0;
+  $.each(amounts, function () { total += parseFloat(this) || 0; });
 
+
+  console.log(total);//所有數字的陣列
   //計算加總
-
-
 }
+
+
 
 //init 
 function init() {
