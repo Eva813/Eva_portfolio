@@ -30,12 +30,14 @@ function updateValue() {
   const amounts = transactions.map(function (transaction) {
     return transaction.amount
   })
+  //計算加總 https://stackoverflow.com/questions/8550183/sum-of-values-in-an-array-using-jquery
   var total = 0;
   $.each(amounts, function () { total += parseFloat(this) || 0; });
+  //傳回YOUR BALANCE
+  $('#balance').text(`$${total}`);
 
+  //console.log(total);
 
-  console.log(total);//所有數字的陣列
-  //計算加總
 }
 
 
