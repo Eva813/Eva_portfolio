@@ -37,20 +37,36 @@ function updateValue() {
   $('#balance').text(`$${total}`);
 
 
-  //從陣列找出>0的值
-  console.log(amounts)
+  //從陣列找出>0的值，放置income
+  //console.log(amounts)
   var income = amounts.filter(
     function (item) {
       return item > 0
     }
   )
   console.log(income);
+
   var totalIncome = 0;
   $.each(income, function () { totalIncome += parseFloat((this).toFixed(2)) || 0; });
 
-  console.log(totalIncome);
+  console.log(totalIncome); //回傳220
   //傳回到income
   $('#money-plus').text(`$${totalIncome}`);
+
+  //從陣列找出<0的值，放置income
+  var expense = amounts.filter(
+    function (item) {
+      return item < 0
+    }
+  )
+  console.log(expense);
+
+  var totalExpense = 0;
+  $.each(expense, function () { totalExpense += parseFloat((this).toFixed(2)) || 0; });
+
+  console.log(totalExpense); //回傳-70
+  //傳回到expense
+  $('#money-minus').text(`$${totalExpense}`)
 }
 
 
