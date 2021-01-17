@@ -21,7 +21,7 @@ function addTransactionDOM(transaction) {
   item.html(`${transaction.text} <span> ${sign}${Math.abs(transaction.amount)}</span> <button class="delete-btn">x</button>`);
 
   $('#list').append(item);
-
+  //console.log(item)
 }
 
 //收入、支出位置可以更新
@@ -32,13 +32,30 @@ function updateValue() {
   })
   //計算加總 https://stackoverflow.com/questions/8550183/sum-of-values-in-an-array-using-jquery
   var total = 0;
-  $.each(amounts, function () { total += parseFloat(this) || 0; });
+  $.each(amounts, function () { total += parseFloat((this).toFixed(2)) || 0; });
   //傳回YOUR BALANCE
   $('#balance').text(`$${total}`);
 
-  //console.log(total);
 
+  //從陣列找出>0的值
+  console.log(amounts)
+  var income = amounts.filter(
+    function (item) {
+      return item > 0
+    }
+  )
+  console.log(income);
+  var totalIncome = 0;
+  $.each(income, function () { totalIncome += parseFloat((this).toFixed(2)) || 0; });
+
+  console.log(totalIncome);
+  //傳回到income
+  $('#money-plus').text(`$${totalIncome}`);
 }
+
+
+
+
 
 
 
