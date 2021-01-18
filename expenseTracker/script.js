@@ -1,13 +1,17 @@
 //const text = $('#text');
 //const amount = $('#amount');
 
-const dummyTransactions = [
-  { id: 1, text: 'Flower', amount: -20 },
-  { id: 2, text: 'salary', amount: 200 },
-  { id: 3, text: 'book', amount: -50 }, { id: 4, text: 'camera', amount: 20 }
-];
+// const dummyTransactions = [
+//   { id: 1, text: 'Flower', amount: -20 },
+//   { id: 2, text: 'salary', amount: 200 },
+//   { id: 3, text: 'book', amount: -50 }, { id: 4, text: 'camera', amount: 20 }
+// ];
 
-let transactions = dummyTransactions;
+const localStorageTransactions = JSON.parse(
+  localStorage.getItem('transactions')
+);//將它變成陣列
+
+let transactions = localStorage.getItem('transactions') !== null ? localStorageTransactions : [];
 
 //***************************/
 //將 交易項目(list)，加入dom列表中
@@ -22,7 +26,7 @@ function addTransactionDOM(transaction) {
   //add class based on value
   item.addClass(transaction.amount < 0 ? 'minus' : 'plus');
 
-  item.html(`${transaction.text} <span> ${sign}${Math.abs(transaction.amount)}</span> <button class="delete-btn onclick='removeTransation(${transaction.id})' ">x</button>`);
+  item.html(`${transaction.text} <span> ${sign}${Math.abs(transaction.amount)}</span> <button class="delete-btn" onclick="removeTransation(${transaction.id})" >x</button>`);
   //將製作好的item加入dom
   $('#list').append(item);
 
@@ -32,10 +36,9 @@ function addTransactionDOM(transaction) {
 
 //刪除鈕
 function removeTransation(id) {
-  const transations = transations.filter(function (transaction) {
-    return transaction.id !== id
-  })
-
+  transactions = transactions.filter(transaction => transaction.id !== id);
+  updateLocalStorage();
+  init();
 
 }
 
@@ -125,7 +128,8 @@ function addTransaction() {
 
   //並將交易紀錄傳到dom(呼應addTransactionDOM)
   addTransactionDOM(transaction);
-  updateValue()
+  updateValue();
+  updateLocalStorage()
 
   $('#text').html('');
   $('#amount').html('');
@@ -138,6 +142,11 @@ function generateID() {
   return Math.floor(Math.random() * 100000000);
 }
 
+
+//更新localstorage
+function updateLocalStorage() {
+  localStorage.setItem('transactions', JSON.stringify(transactions));
+}
 
 
 //****************************/
