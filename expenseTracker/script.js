@@ -131,8 +131,8 @@ function addTransaction() {
   updateValue();
   updateLocalStorage()
 
-  $('#text').html('');
-  $('#amount').html('');
+  $('#text').val('');
+  $('#amount').val('');
 }
 
 
@@ -157,7 +157,5 @@ function init() {
   transactions.forEach(addTransactionDOM);
   updateValue();
 }
-
-
 
 init();
