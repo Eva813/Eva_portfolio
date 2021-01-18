@@ -35,6 +35,8 @@ function updateValue() {
     return transaction.amount
   })
 
+  console.log(amounts);
+
   //計算加總 
   var total = 0;
   $.each(amounts, function () { total += parseFloat((this).toFixed(2)) || 0; });
@@ -102,16 +104,20 @@ function addTransaction() {
     transaction = {
       id: generateID(),
       text: text_value,
-      amount: amount_value
+      amount: +amount_value
     }
     //console.log(transaction);
   }
 
   //將輸入的紀錄推到陣列中
-
+  transactions.push(transaction);
 
   //並將交易紀錄傳到dom(呼應addTransactionDOM)
+  addTransactionDOM(transaction);
+  updateValue()
 
+  $('#text').html('');
+  $('#amount').html('');
 }
 
 
