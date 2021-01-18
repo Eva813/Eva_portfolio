@@ -22,9 +22,20 @@ function addTransactionDOM(transaction) {
   //add class based on value
   item.addClass(transaction.amount < 0 ? 'minus' : 'plus');
 
-  item.html(`${transaction.text} <span> ${sign}${Math.abs(transaction.amount)}</span> <button class="delete-btn">x</button>`);
+  item.html(`${transaction.text} <span> ${sign}${Math.abs(transaction.amount)}</span> <button class="delete-btn onclick='removeTransation(${transaction.id})' ">x</button>`);
   //將製作好的item加入dom
   $('#list').append(item);
+
+
+
+}
+
+//刪除鈕
+function removeTransation(id) {
+  const transations = transations.filter(function (transaction) {
+    return transaction.id !== id
+  })
+
 
 }
 
