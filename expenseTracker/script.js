@@ -9,7 +9,9 @@ const dummyTransactions = [
 
 let transactions = dummyTransactions;
 
+//***************************/
 //將 交易項目(list)，加入dom列表中
+//***************************/
 function addTransactionDOM(transaction) {
   const sign = transaction.amount < 0 ? '-' : '+';
 
@@ -64,23 +66,66 @@ function updateValue() {
       return item < 0
     }
   )
-  console.log(expense);
+  //console.log(expense);
 
   var totalExpense = 0;
   $.each(expense, function () { totalExpense += parseFloat((this).toFixed(2)) || 0; });
 
-  console.log(totalExpense); //回傳-70
+  //console.log(totalExpense); //回傳-70
   //傳回到expense
   $('#money-minus').text(`$${totalExpense}`)
 }
 
 
+//****************************/
+//抓取text輸入並回傳資料
+//****************************/
+
+$('#form').submit(function (e) {
+  e.preventDefault();
+  addTransaction();
+
+});
+
+//****************************/
+//交易紀錄陣列
+//****************************/
+
+function addTransaction() {
+  var text_value = $('#text').val();
+  var amount_value = $('#amount').val();
+
+  if (text_value.trim() === '' || amount_value.trim() === '') {
+    alert('Please add a text and amount');
+  } else {
+    //交易紀錄的物件(呼應上面做的dummytransaction)
+    transaction = {
+      id: generateID(),
+      text: text_value,
+      amount: amount_value
+    }
+    //console.log(transaction);
+  }
+
+  //將輸入的紀錄推到陣列中
+
+
+  //並將交易紀錄傳到dom(呼應addTransactionDOM)
+
+}
+
+
+//****************************/
+// Generate random ID
+function generateID() {
+  return Math.floor(Math.random() * 100000000);
+}
 
 
 
-
-
+//****************************/
 //建立初始函式init 
+//****************************/
 function init() {
   $('#list').html(''); //清除list
   transactions.forEach(addTransactionDOM);
