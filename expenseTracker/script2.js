@@ -1,4 +1,12 @@
 $(document).ready(function () {
+  //預設值的設置，取得存在本地的資料或是空陣列
+  var transactions = JSON.parse(localStorage.getItem('Transactions')) || [];
+
+  //陣列初始
+  if (transactions.length > 0) {
+    initHistory(transactions);
+  }
+
   $('.btn').click(function (e) {
     e.preventDefault();
     //console.log('click');
@@ -7,9 +15,13 @@ $(document).ready(function () {
     const amount_val = $('#amount').val();
     addTransactions(text_val, amount_val);
 
+    //推入陣列
+    transactions.push({
+      name: text_val,
+      amount: amount_val
+    })
+    localStorage.setItem('Transactions', JSON.stringify(transactions));
   })
-
-
 
 
 });
@@ -30,5 +42,11 @@ function addTransactions(name, amount) {
   })
 }
 
+//init
+function initHistory(transactions) {
+  transactions.forEach(transaction => {
+    addTransactions(transaction.name, transaction.amount);
+  });
 
+}
 
