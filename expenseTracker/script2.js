@@ -13,13 +13,18 @@ $(document).ready(function () {
     //取得表格中的值
     const text_val = $('#text').val();
     const amount_val = $('#amount').val();
-    addTransactions(text_val, amount_val);
+    const id = generateID();
+
+    addTransactions(id, text_val, amount_val);
 
     //推入陣列
     transactions.push({
+      id: id,
       name: text_val,
       amount: amount_val
     })
+
+
     localStorage.setItem('Transactions', JSON.stringify(transactions));
   })
 
@@ -28,19 +33,25 @@ $(document).ready(function () {
 
 
 //在list中插入
-function addTransactions(name, amount) {
+function addTransactions(id, name, amount) {
 
+  console.log(id, name, amount);
   const Transaction_str = `<li class='plus' >${name}<span> ${amount}</span><button class="delete-btn">x</button></li>`
   $('#list').append(Transaction_str);
   $('#text').val('');
   $('#amount').val('');
-
 
   //刪除鈕 要交易交出後再綁事件
   $('.delete-btn').last().click(function () {
     $(this).parent().remove();
   })
 }
+
+// Generate random ID
+function generateID() {
+  return Math.floor(Math.random() * 100000000);
+}
+
 
 //init
 function initHistory(transactions) {
