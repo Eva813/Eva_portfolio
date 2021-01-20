@@ -26,8 +26,10 @@ $(document).ready(function () {
 
 
     localStorage.setItem('Transactions', JSON.stringify(transactions));
-  })
 
+
+  })
+  updateValue(transactions);
 
 });
 
@@ -78,12 +80,62 @@ function generateID() {
 }
 
 
+//數值更新計算
+function updateValue(transactions) {
+  const amounts_arr = transactions.map(function (transaction) {
+    return transaction.amount
+  })
+  var amounts = parseInt(amounts_arr);
+  console.log(amounts);
+
+  //計算加總 
+  var total = 0;
+  $.each(amounts_arr, function () { total += parseFloat((this).toFixed(2)) || 0; });
+  //傳回YOUR BALANCE
+  $('#balance').text(`$${total}`);
+  console.log(total);
+
+
+  //*************************** */
+  //從陣列找出>0的值，放置income
+  //console.log(amounts)
+  var income = amounts_arr.filter(
+    function (item) {
+      return item > 0
+    }
+  )
+  console.log(income);
+  var totalIncome = 0;
+  $.each(income, function () { totalIncome += parseFloat((this)) || 0; });
+
+  //console.log(totalIncome); //回傳220
+  //傳回到income
+  $('#money-plus').text(`$${totalIncome}`);
+  //***************************** */
+  //從陣列找出<0的值，放置income
+  var expense = amounts_arr.filter(
+    function (item) {
+      return item < 0
+    }
+  )
+  console.log(expense);
+
+  var totalExpense = 0;
+  $.each(expense, function () { totalExpense += parseFloat((this)) || 0; });
+
+  console.log(totalExpense);
+  //傳回到expense
+  $('#money-minus').text(`$${totalExpense}`)
+
+
+}
 
 //init
 function initHistory(transactions) {
   transactions.forEach(transaction => {
     addTransactions(transaction.id, transaction.name, transaction.amount, transactions);
   });
+  updateValue(transactions);
 
 }
 

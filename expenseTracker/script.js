@@ -48,7 +48,6 @@ function updateValue() {
   const amounts = transactions.map(function (transaction) {
     return transaction.amount
   })
-
   console.log(amounts);
 
   //計算加總 
