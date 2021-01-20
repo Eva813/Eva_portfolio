@@ -34,11 +34,15 @@ $(document).ready(function () {
 
 //在list中插入
 function addTransactions(id, name, amount, transactions) {
+  console.log('amount:', amount);
 
+  const Transaction_str = $('<li></li>').appendTo('#list');
 
-
-  const Transaction_str = `<li class='plus' >${name}<span> ${amount}</span><button class="delete-btn"  data-id="${id}">x</button></li>`
+  Transaction_str.addClass(amount < 0 ? 'minus' : 'plus');
+  Transaction_str.html(`${name}<span> ${amount}</span><button class="delete-btn"  data-id="${id}">x</button>`);
   $('#list').append(Transaction_str);
+
+
   $('#text').val('');
   $('#amount').val('');
 
@@ -49,7 +53,8 @@ function addTransactions(id, name, amount, transactions) {
     //console.log(id);
     deleteFromLocalstorage(transactions);
 
-  })
+  });
+
 }
 //從localstorage刪除
 //要記得在參數放入id
