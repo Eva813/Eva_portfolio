@@ -6,16 +6,16 @@ $(document).ready(function () {
   if (transactions.length > 0) {
     initHistory(transactions);
   }
-
+  //點擊按鈕的事件
   $('.btn').click(function (e) {
     e.preventDefault();
     //console.log('click');
     //取得表格中的值
     const text_val = $('#text').val();
     const amount_val = $('#amount').val();
-    const id = generateID();
+    let id = generateID();
 
-    addTransactions(id, text_val, amount_val);
+    addTransactions(id, text_val, amount_val, transactions);
 
     //推入陣列
     transactions.push({
@@ -33,10 +33,11 @@ $(document).ready(function () {
 
 
 //在list中插入
-function addTransactions(id, name, amount) {
+function addTransactions(id, name, amount, transactions) {
 
-  console.log(id, name, amount);
-  const Transaction_str = `<li class='plus' >${name}<span> ${amount}</span><button class="delete-btn">x</button></li>`
+
+
+  const Transaction_str = `<li class='plus' >${name}<span> ${amount}</span><button class="delete-btn"  data-id="${id}">x</button></li>`
   $('#list').append(Transaction_str);
   $('#text').val('');
   $('#amount').val('');
@@ -44,8 +45,28 @@ function addTransactions(id, name, amount) {
   //刪除鈕 要交易交出後再綁事件
   $('.delete-btn').last().click(function () {
     $(this).parent().remove();
+    let id = $(this).data('id');
+    //console.log(id);
+    deleteFromLocalstorage(transactions);
+
   })
 }
+//從localstorage刪除
+//要記得在參數放入id
+function deleteFromLocalstorage(transactions, id) {
+  transactions.forEach(function (item, index, arr) {
+    //console.log('item', item);
+    //console.log('index', index);
+    //console.log('arr', arr);
+    if (item.id === id) {
+      arr.splice(index, 1);
+    }
+  });
+  //迴圈刪除後，要儲存到localStorage才有確實刪去
+  localStorage.setItem('Transactions', JSON.stringify(transactions));
+}
+
+
 
 // Generate random ID
 function generateID() {
@@ -56,7 +77,7 @@ function generateID() {
 //init
 function initHistory(transactions) {
   transactions.forEach(transaction => {
-    addTransactions(transaction.name, transaction.amount);
+    addTransactions(transaction.id, transaction.name, transaction.amount, transactions);
   });
 
 }
