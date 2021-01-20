@@ -51,7 +51,7 @@ function addTransactions(id, name, amount, transactions) {
     $(this).parent().remove();
     let id = $(this).data('id');
     //console.log(id);
-    deleteFromLocalstorage(transactions);
+    deleteFromLocalstorage(transactions, id); //要記得傳入id
 
   });
 
@@ -72,11 +72,11 @@ function deleteFromLocalstorage(transactions, id) {
 }
 
 
-
 // Generate random ID
 function generateID() {
   return Math.floor(Math.random() * 100000000);
 }
+
 
 
 //init
