@@ -85,12 +85,12 @@ function updateValue(transactions) {
   const amounts_arr = transactions.map(function (transaction) {
     return transaction.amount
   })
-  var amounts = parseInt(amounts_arr);
-  console.log(amounts);
+
+  console.log(amounts_arr);
 
   //計算加總 
   var total = 0;
-  $.each(amounts_arr, function () { total += parseFloat((this).toFixed(2)) || 0; });
+  $.each(amounts_arr, function () { total += parseFloat((this)) || 0; });
   //傳回YOUR BALANCE
   $('#balance').text(`$${total}`);
   console.log(total);
