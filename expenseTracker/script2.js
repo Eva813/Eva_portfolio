@@ -86,14 +86,14 @@ function updateValue(transactions) {
     return transaction.amount
   })
 
-  console.log(amounts_arr);
+  //console.log(amounts_arr);
 
   //計算加總 
   var total = 0;
   $.each(amounts_arr, function () { total += parseFloat((this)) || 0; });
   //傳回YOUR BALANCE
   $('#balance').text(`$${total}`);
-  console.log(total);
+  //console.log(total);
 
 
   //*************************** */
@@ -104,11 +104,12 @@ function updateValue(transactions) {
       return item > 0
     }
   )
-  console.log(income);
+  //console.log(income);
+
   var totalIncome = 0;
   $.each(income, function () { totalIncome += parseFloat((this)) || 0; });
 
-  //console.log(totalIncome); //回傳220
+  //console.log(totalIncome); 
   //傳回到income
   $('#money-plus').text(`$${totalIncome}`);
   //***************************** */
@@ -118,12 +119,12 @@ function updateValue(transactions) {
       return item < 0
     }
   )
-  console.log(expense);
+  //console.log(expense);
 
   var totalExpense = 0;
   $.each(expense, function () { totalExpense += parseFloat((this)) || 0; });
 
-  console.log(totalExpense);
+  //console.log(totalExpense);
   //傳回到expense
   $('#money-minus').text(`$${totalExpense}`)
 
