@@ -25,31 +25,33 @@ function calculate() {
 
 }
 
+
+
 $("#currency-one").change(function () {
-  $("#rate").html("");
+  //$("#rate").html(""); //不需額外清空，直接取代即可
   calculate();
 })
 
 //抓取amountone
 $("#amount-one").on("input", function () {
-  $("#rate").html("");
+  //$("#rate").html("");
   calculate();
 })
 
 $("#currency-two").change(function () {
-  $("#rate").html("");
+  //$("#rate").html("");
   calculate();
 })
 
 //抓取amountTwo
 $("#amount-two").on("input", function () {
-  $("#rate").html("");
+  //$("#rate").html("");
   calculate();
 })
 
 //swap按鈕
 $('#swap').click(function () {
-  $("#rate").html("");
+  //$("#rate").html("");
   let temp = $("#currency-one").val();//設一個變數來存放currency-one
 
   $("#currency-one").val($("#currency-two").val());
