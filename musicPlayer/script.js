@@ -3,7 +3,7 @@ $(document).ready(function (e) {
   $('#play').click(function (e) {
 
 
-    playMusic();
+
 
 
   });
@@ -14,16 +14,17 @@ $(document).ready(function (e) {
 function playMusic() {
 
   $('.music-container').addClass('play');
-  $('i.fas').removeClass('fa-play');
-  $('i.fas').addClass('fa-pause');
-
+  $('#play').find('i').removeClass('fa-play');
+  $('#play').find('i').addClass('fa-pause');
 
 };
 //停止音樂
-// function pauseMusic() {
+function pauseMusic() {
+  $('.music-container').removeClass('play');
+  $('#play').find('i').addClass('fa-play');
+  $('#play').find('i').removeClass('fa-pause');
+}
 
-// }
 
-
-var a = $('i.fas');
+var a = $('.music-container').hasClass('play');
 console.log(a)
