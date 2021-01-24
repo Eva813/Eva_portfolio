@@ -10,6 +10,10 @@ $(document).ready(function () {
     }
   });
 
+  $('#next').click(function () {
+    nextSong()
+  })
+
 });
 
 
@@ -33,18 +37,30 @@ function pauseMusic() {
 //載入歌曲
 
 var songs_name = ['hey', 'summer', 'ukulele'];
+
 let songIndex = 1;
 
 function loadSongs(song) {
-  console.log(song);
+  //console.log(song);
   $('#title').text(song);
 
   $('#audio').attr('src', `music/${song}.mp3`);
   $('#cover').attr('src', `img/${song}.jpg`);
+
 }
 
 // Initially load song details into DOM
 loadSongs(songs_name[songIndex]);
 
-// var a = $('#music-countainer').hasClass('play');
-// console.log(a);
+
+//左右鍵的跳轉
+//歌曲的索引，如果比歌曲總數-1還小，就將索引加1，跳轉下一首
+function nextSong() {
+
+  if (songIndex < songs_name.length - 1) { songIndex += 1; } else {
+    songIndex = 0
+  };
+  loadSongs(songs_name[songIndex]);
+  playMusic();
+}
+
