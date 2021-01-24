@@ -13,7 +13,9 @@ $(document).ready(function () {
   $('#next').click(function () {
     nextSong()
   })
-
+  $('#prev').click(function () {
+    prevSong()
+  })
 });
 
 
@@ -63,4 +65,17 @@ function nextSong() {
   loadSongs(songs_name[songIndex]);
   playMusic();
 }
+//跳轉前一首
 
+
+function prevSong() {
+  //如果索引沒有大於0。就會播索引[2]
+  if (songIndex > 0) { songIndex -= 1; } else {
+    songIndex = songs_name.length - 1;
+  };
+  loadSongs(songs_name[songIndex]);
+  playMusic();
+}
+
+//進度條的製作
+//let curr_track = document.createElement('audio');
