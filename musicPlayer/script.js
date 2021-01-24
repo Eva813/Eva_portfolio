@@ -2,7 +2,7 @@ $(document).ready(function () {
 
   $('#play').click(function (e) {
     var hasPlay = $('#music-container').hasClass('play');
-    var a = $('#audio').paused;
+    //var a = $('#audio').paused;
     if (hasPlay) {
       pauseMusic();
     } else {
@@ -32,12 +32,19 @@ function pauseMusic() {
 
 //載入歌曲
 
-// var songs_name = [hey, summer, ukulele];
+var songs_name = ['hey', 'summer', 'ukulele'];
+let songIndex = 1;
 
-// function loadsongs() {
+function loadSongs(song) {
+  console.log(song);
+  $('#title').text(song);
 
-// }
+  $('#audio').attr('src', `music/${song}.mp3`);
+  $('#cover').attr('src', `img/${song}.jpg`);
+}
 
+// Initially load song details into DOM
+loadSongs(songs_name[songIndex]);
 
-var a = $('#music-countainer').hasClass('play');
-console.log(a);
+// var a = $('#music-countainer').hasClass('play');
+// console.log(a);
