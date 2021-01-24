@@ -79,3 +79,27 @@ function prevSong() {
 
 //進度條的製作
 //let curr_track = document.createElement('audio');
+
+//顯示進度條
+function handleProgress(e) {
+  const progressBar = $('#progress');
+  const progressPercent = (currentTime / duration) * 100;
+  //currentTime目前播放時間去與影片長度duration轉換成百分比，即可得到目前播放時間的百分比
+  progressBar.style.width = `${progressPercent}%`;
+} cvxz
+
+const progress = player.querySelector('.progress');
+
+//點擊, 拖曳進度條
+function scrub(e) {
+  const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = scrubTime;
+}
+video.addEventListener('timeupdate', handleProgress);
+
+let mousedown = false;
+progress.addEventListener('click', scrub);
+progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
+progress.addEventListener('mousedown', () => mousedown = true);
+progress.addEventListener('mouseup', () => mousedown = false);
+
