@@ -10,14 +10,19 @@ $(document).ready(function () {
     }
   });
 
-  $('#next').click(function () {
-    nextSong()
-  })
+  $('#next').click(nextSong)
   $('#prev').click(function () {
-    prevSong()
-  })
+    prevSong();
+  });
 
   $('#audio').on('timeupdate', handleProgress);
+
+  $('#progress-container').click(
+    function () {
+      scrub()
+    }
+  );
+
 });
 
 
@@ -97,7 +102,6 @@ function handleProgress() {
   progressBar.css('width', `${progressPercent}%`);
 };
 
-//const progress = player.querySelector('.progress');
 
 
 
@@ -105,15 +109,21 @@ function handleProgress() {
 //取得滑鼠點選進度條位置e.offsetX和進度條總長度
 //progress.offsetWidth並將其轉換成百分比數值
 function scrub(e) {
-  var audio = $('#audio')
-  const scrubTime = (e.offsetX / progress.offsetWidth) * audio.duration;
-  audio.currentTime = scrubTime;
+
+  let duration = $('#audio').get(0).duration;
+  let offsetX = $(e.target).offset().left;
+  console.log(offsetX);
+  let currentTime = $('#audio')[0].currentTime;
+  let progress_offsetWidth = $("#progress")[0].offsetWidth
+  const scrubTime = (offsetX / progress_offsetWidth) * duration;
+
+  currentTime = scrubTime;
 }
 
 
 let mousedown = false;
-progress.addEventListener('click', scrub);
-progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
-progress.addEventListener('mousedown', () => mousedown = true);
-progress.addEventListener('mouseup', () => mousedown = false);
+
+$('#progress').mousemove((e) => mousedown && scrub(e));
+$('#progress').mousedown(() => mousedown = true);
+$('#progress').mouseup(() => mousedown = false);
 
