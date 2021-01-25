@@ -16,6 +16,8 @@ $(document).ready(function () {
   $('#prev').click(function () {
     prevSong()
   })
+
+  $('#audio').on('timeupdate', handleProgress);
 });
 
 
@@ -81,21 +83,33 @@ function prevSong() {
 //let curr_track = document.createElement('audio');
 
 //顯示進度條
-function handleProgress(e) {
+//為何取[0]
+function handleProgress() {
+  var duration = $('#audio').get(0).duration;
+  //console.log(duration)
+  var currentTime = $('#audio')[0].currentTime;
+  //console.log(currentTime)
   const progressBar = $('#progress');
   const progressPercent = (currentTime / duration) * 100;
-  //currentTime目前播放時間去與影片長度duration轉換成百分比，即可得到目前播放時間的百分比
-  progressBar.style.width = `${progressPercent}%`;
-} cvxz
 
-const progress = player.querySelector('.progress');
+  //currentTime目前播放時間去與影片長度duration轉換成百分比，即可得到目前播放時間的百分比
+
+  progressBar.css('width', `${progressPercent}%`);
+};
+
+//const progress = player.querySelector('.progress');
+
+
 
 //點擊, 拖曳進度條
+//取得滑鼠點選進度條位置e.offsetX和進度條總長度
+//progress.offsetWidth並將其轉換成百分比數值
 function scrub(e) {
-  const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
-  video.currentTime = scrubTime;
+  var audio = $('#audio')
+  const scrubTime = (e.offsetX / progress.offsetWidth) * audio.duration;
+  audio.currentTime = scrubTime;
 }
-video.addEventListener('timeupdate', handleProgress);
+
 
 let mousedown = false;
 progress.addEventListener('click', scrub);
