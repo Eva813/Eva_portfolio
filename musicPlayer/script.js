@@ -119,7 +119,7 @@ function scrub(e) {
 
   currentTime = scrubTime;
 }
-
+//https://ithelp.ithome.com.tw/articles/10194871
 
 let mousedown = false;
 
