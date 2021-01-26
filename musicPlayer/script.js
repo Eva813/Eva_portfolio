@@ -17,11 +17,7 @@ $(document).ready(function () {
 
   $('#audio').on('timeupdate', handleProgress);
 
-  $('#progress-container').click(
-    function () {
-      scrub()
-    }
-  );
+
 
 });
 
@@ -108,22 +104,29 @@ function handleProgress() {
 //點擊, 拖曳進度條
 //取得滑鼠點選進度條位置e.offsetX和進度條總長度
 //progress.offsetWidth並將其轉換成百分比數值
-function scrub(e) {
 
-  let duration = $('#audio').get(0).duration;
-  let offsetX = $(e.target).offset().left;
-  console.log(offsetX);
-  let currentTime = $('#audio')[0].currentTime;
-  let progress_offsetWidth = $("#progress")[0].offsetWidth
-  const scrubTime = (offsetX / progress_offsetWidth) * duration;
-
-  currentTime = scrubTime;
-}
 //https://ithelp.ithome.com.tw/articles/10194871
+//https://tools.wingzero.tw/article/sn/102
 
-let mousedown = false;
 
-$('#progress').mousemove((e) => mousedown && scrub(e));
-$('#progress').mousedown(() => mousedown = true);
-$('#progress').mouseup(() => mousedown = false);
+$('#progress-container').click(function (e) {
+  const width = $('#progress-container').width(); //216.25
+  //console.log(width);
+  //取得點擊位置
+  var elm = $(this);
+  var xPos = e.pageX - elm.offset().left;
+
+  //console.log(xPos);
+
+  var duration = $('#audio')[0].duration;
+
+
+  var theTime = ((xPos / width))
+    * duration;
+  //console.log(theTime);
+  $('#audio')[0].currentTime = theTime;
+});
+
+
+
 
