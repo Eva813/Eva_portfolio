@@ -162,7 +162,7 @@ function random_bg_color() {
 
   var bg = $(document.body).css('background', `${bgColor}`);
   // Set the background to the new color 
-  //bg = bgColor;
-  console.log(bg)
+  bg = bgColor;
+  //console.log(bg)
 
 } 
