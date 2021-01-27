@@ -152,9 +152,9 @@ function random_bg_color() {
   //https://stackoverflow.com/questions/20790579/wont-math-floormath-random-255-generate-uneven-probabilities
 
   // (for getting lighter colors) 
-  let red = Math.floor(Math.random() * 256) + 64;
-  let green = Math.floor(Math.random() * 256) + 64;
-  let blue = Math.floor(Math.random() * 256) + 64;
+  let red = Math.floor(Math.random() * 255) + 64;
+  let green = Math.floor(Math.random() * 255) + 64;
+  let blue = Math.floor(Math.random() * 255) + 64;
   let a = 0.5
 
   // Construct a color withe the given values 
@@ -162,7 +162,7 @@ function random_bg_color() {
 
   var bg = $(document.body).css('background', `${bgColor}`);
   // Set the background to the new color 
-  bg = bgColor;
+  //bg = bgColor;
   console.log(bg)
 
 } 
