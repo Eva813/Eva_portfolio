@@ -17,6 +17,9 @@ $(document).ready(function () {
 
   $('#audio').on('timeupdate', handleProgress);
 
+  //歌曲播完後換下一首
+  $('#audio').on('ended',
+    nextSong);
 
 
 });
@@ -116,9 +119,9 @@ $('#progress-container').click(function (e) {
   var elm = $(this);
   var xPos = e.pageX - elm.offset().left;
 
-  console.log(e.pageX);
-  console.log(elm.offset().left);
-  console.log(xPos)
+  //console.log(e.pageX);
+  //console.log(elm.offset().left);
+  //console.log(xPos)
 
   var duration = $('#audio')[0].duration;
 
@@ -127,6 +130,8 @@ $('#progress-container').click(function (e) {
   //console.log(theTime);
   $('#audio')[0].currentTime = theTime;
 });
+
+
 
 
 
