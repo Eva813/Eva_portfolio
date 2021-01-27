@@ -5,6 +5,8 @@ $(document).ready(function () {
     //var a = $('#audio').paused;
     if (hasPlay) {
       pauseMusic();
+
+
     } else {
       playMusic();
     }
@@ -55,6 +57,7 @@ function loadSongs(song) {
   $('#audio').attr('src', `music/${song}.mp3`);
   $('#cover').attr('src', `img/${song}.jpg`);
 
+  random_bg_color();
 }
 
 // Initially load song details into DOM
@@ -80,7 +83,11 @@ function prevSong() {
     songIndex = songs_name.length - 1;
   };
   loadSongs(songs_name[songIndex]);
+
+
   playMusic();
+
+
 }
 
 //進度條的製作
@@ -132,7 +139,30 @@ $('#progress-container').click(function (e) {
 });
 
 
+// function backgroundColor() {
+//   if (songIndex = 0) {
+//     $('body').css('background-img', "blue")
+//   }
+// }
 
 
 
+function random_bg_color() {
+  // Get a random number between 64 to 256 
+  //https://stackoverflow.com/questions/20790579/wont-math-floormath-random-255-generate-uneven-probabilities
 
+  // (for getting lighter colors) 
+  let red = Math.floor(Math.random() * 256) + 64;
+  let green = Math.floor(Math.random() * 256) + 64;
+  let blue = Math.floor(Math.random() * 256) + 64;
+  let a = 0.5
+
+  // Construct a color withe the given values 
+  let bgColor = "rgba(" + red + ", " + green + ", " + blue + ", " + a + ")";
+
+  var bg = $(document.body).css('background', `${bgColor}`);
+  // Set the background to the new color 
+  bg = bgColor;
+  console.log(bg)
+
+} 
