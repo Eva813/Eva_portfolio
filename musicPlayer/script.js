@@ -87,7 +87,7 @@ function prevSong() {
 //為何取[0]
 function handleProgress() {
   var duration = $('#audio').get(0).duration;
-  //console.log(duration)
+  // console.log(duration)
   var currentTime = $('#audio')[0].currentTime;
   //console.log(currentTime)
   const progressBar = $('#progress');
@@ -116,10 +116,11 @@ $('#progress-container').click(function (e) {
   var elm = $(this);
   var xPos = e.pageX - elm.offset().left;
 
-  //console.log(xPos);
+  console.log(e.pageX);
+  console.log(elm.offset().left);
+  console.log(xPos)
 
   var duration = $('#audio')[0].duration;
-
 
   var theTime = ((xPos / width))
     * duration;
