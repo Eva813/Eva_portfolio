@@ -76,9 +76,9 @@ h1 {
 }
 
 .loader {
-  opacity: 0;
+  /* opacity: 0; */
   display: flex;
-  position: fixed;
+  position: fixed; /*位置固定於最下面*/
   bottom: 50px;
   transition: opacity 0.3s ease-in;
 }
@@ -86,7 +86,7 @@ h1 {
 .loader.show {
   opacity: 1;
 }
-
+/*製作圓點*/
 .circle {
   background-color: #fff;
   width: 10px;
