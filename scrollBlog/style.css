@@ -76,7 +76,7 @@ h1 {
 }
 
 .loader {
-  /* opacity: 0; */
+  opacity: 0;
   display: flex;
   position: fixed; /*位置固定於最下面*/
   bottom: 50px;

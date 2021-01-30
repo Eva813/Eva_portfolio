@@ -1,3 +1,7 @@
+$(document).ready(function () {
+  doAjax();
+});
+
 
 let limit = 5
 let page = 1
@@ -34,27 +38,26 @@ async function doAjax() {
 
 }
 
-doAjax()
 
 
 
+$(window).scroll(function () {
+  var scrollTop = $(this).scrollTop();
+  var scrollHeight = $('body').prop("scrollHeight");
+  //一樣 var scrollHeight2 = document.documentElement.scrollHeight;
+  var clientHeight = document.documentElement.clientHeight;
+  //https://stackoverflow.com/questions/10423759/plain-javascript-to-jquery-clientheight
+
+  console.log('scrollTop:', scrollTop);
+  console.log('scrollHeight:', scrollHeight);
+  console.log('clientHeight:', clientHeight);
 
 
-// function getData(ajaxurl) {
-//   return $.ajax({
-//     url: ajaxurl,
-//     dataType: 'json',
-//     type: 'GET',
-//   });
-// };
+  if (scrollTop + clientHeight >= scrollHeight - 5) {
+    console.log('123')
+    // showLoading();
+  }
+})
 
-// async function test() {
-//   try {
-//     const res = await getData(`https://jsonplaceholder.typicode.com/posts？_limit=${limit}&_page=${page}`)
-//     console.log(res)
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
 
-// test();
+
