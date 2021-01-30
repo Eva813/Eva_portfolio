@@ -12,12 +12,18 @@ async function doAjax() {
       dataType: 'json',
       success: function (data) {
         $.each(data, function (index, value) {
-          $('<div />')
+
+
+          const postEl = $('<div />').addClass('post').html(`<div class="number">${value.id}</div> <div class="post-info"><h2 class="post-title">${value.title}</h2><p class="post-body">${value.body}</p>
+      </div>`)
+          //console.log(postEl)
+          postEl.appendTo('#posts-container');
+          //$('#posts-container').append(postEl)
 
         });
 
 
-        console.log(data);
+        //console.log(data);
       }
     });
 
