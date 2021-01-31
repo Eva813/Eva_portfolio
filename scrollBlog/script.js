@@ -1,9 +1,28 @@
 $(document).ready(function () {
   doAjax();
 
-  $('#filter').on(input,
 
-  );
+  //輸入框搜尋//https://makitweb.com/jquery-search-text-in-the-element-with-contains-selector/  (=>Loop all .content )
+  $('#filter').keyup(function () {
+
+    // Search text
+    var text = $('#filter').val().toLowerCase();
+
+    // Hide all content class element
+    $('.post').hide();
+
+    // Search 
+    $('.post').each(function () {
+
+      if ($(this).text().toLowerCase().indexOf("" + text + "") != -1) {
+        $(this).closest('.post').show();
+      }
+    });
+
+
+  });
+
+
 });
 
 
@@ -82,8 +101,3 @@ function showLoading() {
   //在1秒消失後，接著在300毫秒後，馬上換頁執行載入新資料
 }
 
-//輸入框的篩選
-//取得輸入框輸輸入的值
-function filterPosts() {
-
-}
