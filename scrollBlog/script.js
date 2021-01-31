@@ -48,16 +48,32 @@ $(window).scroll(function () {
   var clientHeight = document.documentElement.clientHeight;
   //https://stackoverflow.com/questions/10423759/plain-javascript-to-jquery-clientheight
 
-  console.log('scrollTop:', scrollTop);
-  console.log('scrollHeight:', scrollHeight);
-  console.log('clientHeight:', clientHeight);
+  // console.log('scrollTop:', scrollTop);
+  // console.log('scrollHeight:', scrollHeight);
+  // console.log('clientHeight:', clientHeight);
 
 
   if (scrollTop + clientHeight >= scrollHeight - 5) {
-    console.log('123')
-    // showLoading();
+    //console.log('show up 123')
+    showLoading();
   }
 })
 
 
+//顯示載入圖示，並取得更多串接資料
+function showLoading() {
+  $('.loader').addClass('show');
 
+
+  setTimeout(function () {
+
+    $('.loader').removeClass('show');
+
+    setTimeout(function () {
+      page++;
+      doAjax();
+    }, 300);
+
+  }, 1000);  //1秒之後消失
+  //在1秒消失後，接著在300毫秒後，馬上換頁執行載入新資料
+}
