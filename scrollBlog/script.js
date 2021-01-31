@@ -1,5 +1,9 @@
 $(document).ready(function () {
   doAjax();
+
+  $('#filter').on(input,
+
+  );
 });
 
 
@@ -76,4 +80,10 @@ function showLoading() {
 
   }, 1000);  //1秒之後消失
   //在1秒消失後，接著在300毫秒後，馬上換頁執行載入新資料
+}
+
+//輸入框的篩選
+//取得輸入框輸輸入的值
+function filterPosts() {
+
 }
