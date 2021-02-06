@@ -63,3 +63,24 @@ function updateScore() {
   score++;
   $('#score').text(score);
 }
+
+// Init time
+let time = 10;
+// 倒數計時
+//https://jsfiddle.net/satyasrinivaschekuri/y03m54Le/
+function countTime() {
+  time--;
+  $('#time').text(`${time}s`)
+  if (time <= 0) {
+    clearInterval(downloadTimer);
+    gameOver();
+  }
+  //   } else {
+  //     time--;
+  //     $('#time').text(`${time}s`)
+  //   }
+}
+
+
+var downloadTimer = setInterval(countTime, 1000);
+
