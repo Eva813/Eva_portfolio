@@ -43,7 +43,7 @@ function getRandomword() {
 };
 
 getRandomword()
-checkWord()
+
 
 //輸入單字核對
 function checkWord() {
@@ -51,7 +51,15 @@ function checkWord() {
   let Item = randomItem;
   console.log(Item);
   if (text === Item) {
-    addWordToDOM();
+    getRandomword();
     updateScore();
+    $('#text').val("");
   }
+}
+
+let score = 0
+//分數計算
+function updateScore() {
+  score++;
+  $('#score').text(score);
 }
