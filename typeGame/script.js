@@ -81,6 +81,14 @@ function countTime() {
   //   }
 }
 
-
 var downloadTimer = setInterval(countTime, 1000);
 
+//遊戲結束
+function gameOver() {
+  $('#end-game-container').html(`<h1>Time ran out</h1>
+  <p>Your final score is ${score}</p>
+  <button onclick="location.reload()">Reload</button>
+  `)
+  // 顯示指定的flex容器
+  $("#end-game-container").css('display', 'flex');
+}
