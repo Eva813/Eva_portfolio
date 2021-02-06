@@ -1,6 +1,11 @@
 $(document).ready(function () {
 
   $('input').keyup(checkWord);
+
+  $('#settings-btn').click(function (e) {
+    e.preventDefault();
+    $('.settings').toggleClass('hide')
+  });
 });
 
 
@@ -54,6 +59,10 @@ function checkWord() {
     getRandomword();
     updateScore();
     $('#text').val("");
+
+    time += 5;
+    countTime()
+
   }
 }
 
@@ -84,6 +93,7 @@ function countTime() {
 var downloadTimer = setInterval(countTime, 1000);
 
 //遊戲結束
+//location.reload()
 function gameOver() {
   $('#end-game-container').html(`<h1>Time ran out</h1>
   <p>Your final score is ${score}</p>
@@ -92,3 +102,34 @@ function gameOver() {
   // 顯示指定的flex容器
   $("#end-game-container").css('display', 'flex');
 }
+
+
+//如果儲存端不是空值(已有選擇)，就以此為主，否則的話就是medium
+let difficulty = localStorage.getItem('difficulty') !== null
+  ? localStorage.getItem('difficulty')
+  : 'medium';
+
+
+
+//設置select的選擇
+$('form').change(function () {
+  difficulty = $('#difficulty').val();
+  console.log(difficulty)
+  localStorage.setItem('difficulty', difficulty);
+  diff();
+});
+//let a = $('#difficulty').val()
+// Set difficulty select value
+// a = localStorage.getItem('difficulty') !== null
+//   ? localStorage.getItem('difficulty') : 'medium';
+
+
+function diff() {
+  let a = $('#difficulty').val();
+  if (localStorage.getItem('difficulty') !== null) {
+    a = localStorage.getItem('difficulty')
+  } else {
+    a = 'medium'
+  }
+}
+
