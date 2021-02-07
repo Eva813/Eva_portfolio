@@ -6,6 +6,23 @@ $(document).ready(function () {
     e.preventDefault();
     $('.settings').toggleClass('hide')
   });
+
+
+  //設置select的選擇
+  $('form').change(function () {
+    difficulty = $('#difficulty').val();
+    localStorage.setItem('difficulty', difficulty);
+
+  });
+  //使畫面的難易度選擇，呈現儲存的選項
+  $('#difficulty').val(function () {
+    let a = $('#difficulty').val()
+    if (localStorage.getItem('difficulty') !== null) {
+      return a = localStorage.getItem('difficulty');
+    } else {
+      return a = 'medium';
+    }
+  })
 });
 
 
@@ -120,25 +137,13 @@ let difficulty = localStorage.getItem('difficulty') !== null
 
 
 
-//設置select的選擇
-$('form').change(function () {
-  difficulty = $('#difficulty').val();
-  console.log(difficulty)
-  localStorage.setItem('difficulty', difficulty);
-  diff();
-});
-//let a = $('#difficulty').val()
-// Set difficulty select value
-// a = localStorage.getItem('difficulty') !== null
-//   ? localStorage.getItem('difficulty') : 'medium';
+
+// let a = $('#difficulty').val()
+// // Set difficulty select value
+// a = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'medium';
 
 
-function diff() {
-  let a = $('#difficulty').val();
-  if (localStorage.getItem('difficulty') !== null) {
-    a = localStorage.getItem('difficulty')
-  } else {
-    a = 'medium'
-  }
-}
+
+
+
 
