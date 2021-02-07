@@ -124,9 +124,21 @@ function gameOver() {
   $('#end-game-container').html(`<h1>Time ran out</h1>
   <p>Your final score is ${score}</p>
   <button onclick="location.reload()">Reload</button>
+  <div id="img" >
+        <img src="./good.png" alt="">
+      </div>
   `)
   // 顯示指定的flex容器
   $("#end-game-container").css('display', 'flex');
+
+  //增加判斷，分數達到一標準，會出現圖示
+  let s = score
+  console.log(s)
+  if (s >= 5) {
+    $("#end-game-container").find('img').addClass('show');
+
+  };
+
 }
 
 
@@ -137,10 +149,6 @@ let difficulty = localStorage.getItem('difficulty') !== null
 
 
 
-
-// let a = $('#difficulty').val()
-// // Set difficulty select value
-// a = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'medium';
 
 
 
