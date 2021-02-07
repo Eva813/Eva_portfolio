@@ -133,7 +133,7 @@ function gameOver() {
 
   //增加判斷，分數達到一標準，會出現圖示
   let s = score
-  console.log(s)
+  //console.log(s)
   if (s >= 5) {
     $("#end-game-container").find('img').addClass('show');
 
