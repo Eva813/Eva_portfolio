@@ -64,7 +64,7 @@ function getRandomword() {
   $('#word').text(randomItem);
 };
 
-getRandomword()
+getRandomword();
 
 
 //輸入單字核對
@@ -86,7 +86,7 @@ function checkWord() {
       time += 5;
     }
 
-
+    //判斷完之後，隨之繼續倒數時間
     countTime();
 
   }
