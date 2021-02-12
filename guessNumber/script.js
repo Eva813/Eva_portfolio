@@ -29,11 +29,18 @@ catch (e) {
 recognition.start();
 //取得語音辨識的結果
 recognition.onresult = function (event) {
-  console.log(event);
+  //console.log(event);
   let myWord = event.results[0][0].transcript
-  console.log('You said: ', myWord);
+  //console.log('You said: ', myWord);
+  writeMessage(myWord)
 };
 
 
-
-
+//記錄下使用者所說的
+function writeMessage(myWord) {
+  $('#msg').html(`
+  <div>You said:</div>
+    <span class="box">${myWord}</span>
+    <div>GO higher</div>
+  `)
+}
