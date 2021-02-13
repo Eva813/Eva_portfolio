@@ -32,7 +32,8 @@ recognition.onresult = function (event) {
   //console.log(event);
   let myWord = event.results[0][0].transcript
   //console.log('You said: ', myWord);
-  writeMessage(myWord)
+  writeMessage(myWord);
+  checkNumber(myWord);
 };
 
 
@@ -41,6 +42,32 @@ function writeMessage(myWord) {
   $('#msg').html(`
   <div>You said:</div>
     <span class="box">${myWord}</span>
-    <div>GO higher</div>
+    
   `)
+}
+//核對隨機數字與猜的數字
+function checkNumber(myWord) {
+  let number = +myWord; //轉為數字
+  if (Number.isNaN(number)) {
+    $('#msg').append(`<div>This is not a valid number</div>`)
+    return
+  }
+
+  if (number > 100 || number < 1) {
+    $('#msg').append(`<div>Number must be between 1 and 100</div>`);
+    return;
+  }
+
+  if (number === randomNum) {
+    $('body').html(`
+    <h2>Congrats! You have guessed the number! <br><br> 
+    It was ${number}</h2>
+    <button class="play-again" id="play-again" > Play Again </button>
+    `);
+  } else if (number > randomNum) {
+    $('#msg').append(`<div>GO LOWER</div>`);
+  } else {
+    $('#msg').append(`<div>GO HIGHER</div>`)
+  }
+
 }
