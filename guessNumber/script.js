@@ -16,6 +16,8 @@ console.log(randomNum);
 try {
   var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   var recognition = new SpeechRecognition();
+  //設定辨識語言。
+  recognition.lang = 'zh-tw';
 }
 catch (e) {
   console.error(e);
@@ -84,6 +86,10 @@ recognition.onend = function () {
     }
 
   );
+}
+
+recognition.onspeechend = function () {
+  recognition.stop();
 }
 
 
