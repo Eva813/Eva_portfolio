@@ -52,7 +52,7 @@ function checkNumber(myWord) {
     $('#msg').append(`<div>This is not a valid number</div>`)
     return
   }
-
+  //設定語句
   if (number > 100 || number < 1) {
     $('#msg').append(`<div>Number must be between 1 and 100</div>`);
     return;
@@ -70,4 +70,10 @@ function checkNumber(myWord) {
     $('#msg').append(`<div>GO HIGHER</div>`)
   }
 
+}
+
+//使猜數字可以持續猜，直到答對為止
+//https://stackoverflow.com/questions/51080738/how-to-make-speech-recognition-continous-for-a-fix-time-period
+recognition.onend = function () {
+  recognition.start();
 }
