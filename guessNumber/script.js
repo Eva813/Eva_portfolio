@@ -76,4 +76,14 @@ function checkNumber(myWord) {
 //https://stackoverflow.com/questions/51080738/how-to-make-speech-recognition-continous-for-a-fix-time-period
 recognition.onend = function () {
   recognition.start();
+  //點擊按鈕，重啟遊戲畫面
+  $('body').find('#play-again').click(
+
+    function () {
+      window.location.reload();
+    }
+
+  );
 }
+
+
