@@ -6,7 +6,7 @@ function theRandomNum() {
 }
 
 let randomNum = theRandomNum();
-console.log(randomNum);
+console.log('randomNum:', randomNum);
 
 //語音辨識
 // window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
@@ -66,6 +66,7 @@ function checkNumber(myWord) {
     It was ${number}</h2>
     <button class="play-again" id="play-again" > Play Again </button>
     `);
+    recognition.stop();
   } else if (number > randomNum) {
     $('#msg').append(`<div>GO LOWER</div>`);
   } else {
@@ -86,10 +87,6 @@ recognition.onend = function () {
     }
 
   );
-}
-
-recognition.onspeechend = function () {
-  recognition.stop();
 }
 
 
