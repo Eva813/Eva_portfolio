@@ -52,8 +52,7 @@ const words = [
   'loving'
 ];
 
-//初始文字
-//let randomItem
+
 
 // 隨機取得單字
 function getRandomword() {
