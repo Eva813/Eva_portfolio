@@ -85,3 +85,15 @@ h1 {
     font-size: 10px;
   }
 }
+
+
+.year{
+  font-size: 200px;
+  z-index: -1;
+  opacity: 0.2;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
