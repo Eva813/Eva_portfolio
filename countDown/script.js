@@ -23,6 +23,14 @@ function updateCountdown() {
   const h = Math.floor(diff / 1000 / 60 / 60) % 24;
   const m = Math.floor(diff / 1000 / 60) % 60;
   const s = Math.floor(diff / 1000) % 60;
+  $('#days').html(d);
+  //當數字少於10，要呈現01,02...
+  $('#hours').html(h < 10 ? '0' + h : h);
+  $('#minutes').html(m < 10 ? '0' + m : m);
+  $('#seconds').html(s < 10 ? '0' + s : s);
 
 }
-updateCountdown();
+
+
+//設定每一秒都會循環倒數
+setInterval(updateCountdown, 1000);
