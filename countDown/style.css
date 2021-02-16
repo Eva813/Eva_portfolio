@@ -49,13 +49,15 @@ h1 {
 }
 
 .countdown{
-  display: flex;
+  /* display: flex; */
+   display: none; 
   /*將字進行縮放*/
    transform: scale(2); 
 
 }
 .time{
-  display: flex;
+   display: flex; 
+  
   flex-direction: column;
   margin: 15px;
    align-items: center;
