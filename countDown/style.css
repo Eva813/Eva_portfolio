@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1467810563316-b5476525c0f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh; /*使圖佔滿整個視窗*/
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+margin: 0;
+overflow: hidden;
+
+
+
+}
+
+/*讓圖片比較暗，在body後面增加*/
+ body::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+} 
+
+/* https://stackoverflow.com/questions/378096/what-does-html-body-mean-in-a-css-style-sheet */
+/*https://www.peachpit.com/articles/article.aspx?p=358552*/
+/* *:代表所有元素;body *:表示在body下的所有元素  */
+ body *{
+  z-index: 1;
+}
