@@ -41,3 +41,46 @@ overflow: hidden;
  body *{
   z-index: 1;
 }
+
+
+h1 {
+  font-size: 60px;
+   margin: -80px 0 40px;
+}
+
+.countdown{
+  display: flex;
+  /*將字進行縮放*/
+   transform: scale(2); 
+
+}
+.time{
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+   align-items: center;
+  justify-content: center; 
+}
+.time h2{
+  margin: 0 0 5px;
+}
+
+/*增加讓螢幕寬度變化時，字的大小隨之改變*/
+@media (max-width: 500px) {
+  h1 {
+    font-size: 45px;
+  }
+
+  .time {
+    margin: 5px;
+  }
+
+  .time h2 {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .time small {
+    font-size: 10px;
+  }
+}
