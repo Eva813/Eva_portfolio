@@ -15,7 +15,7 @@ const newYearTime = new Date(`January 01 ${currentYear + 1} 00:00:00`);
 //console.log(currentYear);
 //console.log(newYearTime);
 
-//取得現在時間;取得現在時間與新年時間的差異
+//取得現在時間;將取得現在時間與新年時間的差異
 function updateCountdown() {
   const currentTime = new Date();
   //console.log(currentTime);
