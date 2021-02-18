@@ -21,6 +21,7 @@ function updateCountdown() {
   //console.log(currentTime);
   const diff = newYearTime - currentTime;
   //diff計算出來是毫秒
+
   //days
   const d = Math.floor(diff / 1000 / 60 / 60 / 24);
   //取得除以24之後的餘數
