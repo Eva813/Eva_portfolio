@@ -19,9 +19,19 @@ const listItems = [];
 //要能夠持續追蹤每個項目的index，所以要有個初始變數
 let dragStartIndex;
 
+//Fisher-Yates洗牌演算法
+function fisherYatesShuffle(arr) {
+  for (var i = arr.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1)); //random index
+    [arr[i], arr[j]] = [arr[j], arr[i]]; // swap
+  }
+}
+
+
 //製作實際可以看到的list
 function creatList() {
-  let placeArr = [...bestPlace]
+  let placeArr = [...bestPlace];
+  fisherYatesShuffle(placeArr);
   $.each(placeArr, function (index, place) {
     const listItem = $('<li></li>').appendTo('#draggable-list');
     // console.log(listItem);
@@ -34,6 +44,7 @@ function creatList() {
 
 
     listItems.push(listItem);
+    //insert into dom
     $('#draggable-list').append(listItem);
   });
 }
