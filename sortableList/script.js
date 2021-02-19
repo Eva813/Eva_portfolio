@@ -38,7 +38,7 @@ function creatList() {
     listItem.attr("data-index", "index");
     listItem.html(`<span class="number">${index + 1}</span>
         <div class="draggable" draggable="true">
-          <p class="placce-name">${place}</p>
+          <p class="place-name">${place}</p>
           <i class="fas fa-grip-lines"></i>
         </div>`)
 
