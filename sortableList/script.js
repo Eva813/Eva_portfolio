@@ -79,9 +79,12 @@ function addEventListeners() {
     // console.log('Event: ', 'dragover');
 
   }
+  //設定開始的index,以及結束的index是為了交換
   function dragDrop() {
     // console.log('Event: ', 'dragdrop');
-
+    const dragEndIndex = +$(this).attr('data-index');
+    swapItems(dragStartIndex, dragEndIndex);
+    $(this).removeClass('over');
   }
   function dragEnter() {
     // console.log('Event: ', 'dragenter');
