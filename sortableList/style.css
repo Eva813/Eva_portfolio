@@ -49,8 +49,8 @@ body {
 }
 /* 拖曳使下方項目變成灰色 */
 .draggable-list li.over .draggable {
-  /* background-color: #eaeaea; */
-  background-color: #000000;
+  background-color: #eaeaea;
+  /* background-color: #000000; */
 }
 
 .draggable-list .place-name {

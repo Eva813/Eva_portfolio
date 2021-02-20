@@ -1,3 +1,8 @@
+$(document).ready(function () {
+
+});
+
+
 //https://www.social-lab.cc/2020/06/social-insights/%E5%9C%8B%E5%85%A7%E6%97%85%E9%81%8A%E5%9B%9E%E6%BA%AB-%E6%9C%80%E5%A4%AF%E6%97%85%E9%81%8A%E7%B8%A3%E5%B8%82%E6%8E%92%E8%A1%8C%E6%A6%9C%E5%87%BA%E7%88%90%EF%BC%81/
 const bestPlace = [
   '台南',
@@ -35,7 +40,7 @@ function creatList() {
   $.each(placeArr, function (index, place) {
     const listItem = $('<li></li>').appendTo('#draggable-list');
     // console.log(listItem);
-    listItem.attr("data-index", "index");
+    listItem.attr("data-index", index);
     //listItem.addClass('wrong')
     listItem.html(`<span class="number">${index + 1}</span>
         <div class="draggable" draggable="true">
@@ -48,27 +53,58 @@ function creatList() {
     //insert into dom
     $('#draggable-list').append(listItem);
   });
-  // $('#draggable-list').sortable();
-  // $('#draggable-list').disableSelection();
-  dragdrop();
+
+  addEventListeners()
 }
 creatList();
 
-function dragdrop() {
-  $(".draggable-list ").find('p').draggable(
-    {
-      addClass: 'over',
-      mouseStart: function () {
-        dragStartIndex = +this.closest('li').getAttribute('data-index');
-      },
-      drag: function (e) { e.preventDefault() },
-      // mouseover: function () {
-      //   $(this).addClass('over');
-      // }
-    }
+//監聽事件
+function addEventListeners() {
+  const draggables = document.querySelectorAll('.draggable');
+  const dragListItems = document.querySelectorAll('.draggable-list li');
+
+  //拖拉的各函式
+  function dragStart() {
+    // console.log('Event: ', 'dragstart');
+    dragStartIndex = +this.closest('li').getAttribute('data-index');
+  }
+
+  function dragStart() {
+    //console.log('Event: ', 'dragstart');
+    dragStartIndex = +$(this).closest('li').attr('data-index');
+
+    console.log(dragStartIndex);
+  };
+  function dragOver() {
+    // console.log('Event: ', 'dragover');
+
+  }
+  function dragDrop() {
+    // console.log('Event: ', 'dragdrop');
+
+  }
+  function dragEnter() {
+    // console.log('Event: ', 'dragenter');
+    $(this).addClass('over');
+  }
+  function dragLeave() {
+    // console.log('Event: ', 'dragleave');
+    $(this).removeClass('over');
+  }
 
 
+  //Dragable dot 增加監聽事件
 
-  );
+  draggables.forEach(draggable => {
+    draggable.addEventListener('dragstart', dragStart);
+  });
+  dragListItems.forEach(item => {
+    item.addEventListener('dragover', dragOver);
+    item.addEventListener('drop', dragDrop);
+    item.addEventListener('dragenter', dragEnter);
+    item.addEventListener('dragleave', dragLeave);
+  })
 
 }
+
+
