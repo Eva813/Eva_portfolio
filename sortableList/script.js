@@ -36,6 +36,7 @@ function creatList() {
     const listItem = $('<li></li>').appendTo('#draggable-list');
     // console.log(listItem);
     listItem.attr("data-index", "index");
+    //listItem.addClass('wrong')
     listItem.html(`<span class="number">${index + 1}</span>
         <div class="draggable" draggable="true">
           <p class="place-name">${place}</p>
@@ -47,5 +48,27 @@ function creatList() {
     //insert into dom
     $('#draggable-list').append(listItem);
   });
+  // $('#draggable-list').sortable();
+  // $('#draggable-list').disableSelection();
+  dragdrop();
 }
 creatList();
+
+function dragdrop() {
+  $(".draggable-list ").find('p').draggable(
+    {
+      addClass: 'over',
+      mouseStart: function () {
+        dragStartIndex = +this.closest('li').getAttribute('data-index');
+      },
+      drag: function (e) { e.preventDefault() },
+      // mouseover: function () {
+      //   $(this).addClass('over');
+      // }
+    }
+
+
+
+  );
+
+}
