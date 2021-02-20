@@ -75,9 +75,9 @@ function addEventListeners() {
 
     console.log(dragStartIndex);
   };
-  function dragOver() {
+  function dragOver(e) {
     // console.log('Event: ', 'dragover');
-
+    e.preventDefault();
   }
   //設定開始的index,以及結束的index是為了交換
   function dragDrop() {
@@ -86,6 +86,19 @@ function addEventListeners() {
     swapItems(dragStartIndex, dragEndIndex);
     $(this).removeClass('over');
   }
+
+  function swapItems(fromIndex, toIndex) {
+    //要設定交換之前，要先到dragover去設定e.preventDefault();（因為dragover會擋到交換的執行）
+    var a = $('.draggable');
+    console.log()
+    const itemOne = listItems[fromIndex].a;
+    const itemTwo = listItems[toIndex].a;
+
+    console.log(itemOne, itemTwo)
+    listItems[fromIndex].append(itemTwo);
+    listItems[toIndex].append(itemOne);
+  }
+
   function dragEnter() {
     // console.log('Event: ', 'dragenter');
     $(this).addClass('over');
