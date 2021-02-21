@@ -89,10 +89,9 @@ function addEventListeners() {
 
   function swapItems(fromIndex, toIndex) {
     //要設定交換之前，要先到dragover去設定e.preventDefault();（因為dragover會擋到交換的執行）
-    var a = $('.draggable');
-    console.log()
-    const itemOne = listItems[fromIndex].a;
-    const itemTwo = listItems[toIndex].a;
+
+    const itemOne = listItems[fromIndex].find('.draggable');
+    const itemTwo = listItems[toIndex].find('.draggable');
 
     console.log(itemOne, itemTwo)
     listItems[fromIndex].append(itemTwo);
@@ -124,3 +123,23 @@ function addEventListeners() {
 }
 
 
+
+
+
+//核對排名順序
+function checkOrder() {
+  listItems.forEach((listItem, index) => {
+    const personName = listItem.find('.draggable').text().trim();
+
+    if (personName !== bestPlace[index]) {
+      listItem.addClass('wrong');
+    } else {
+      listItem.removeClass('wrong');
+      listItem.addClass('right');
+    }
+  });
+}
+
+
+
+$('#check').click(checkOrder); 
