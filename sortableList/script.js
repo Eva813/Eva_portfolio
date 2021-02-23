@@ -1,5 +1,6 @@
 $(document).ready(function () {
-
+  creatList();
+  $('#check').click(checkOrder);
 });
 
 
@@ -21,8 +22,7 @@ const bestPlace = [
 
 //儲存上述的放入空陣列
 const listItems = [];
-//要能夠持續追蹤每個項目的index，所以要有個初始變數
-let dragStartIndex;
+
 
 //Fisher-Yates洗牌演算法
 function fisherYatesShuffle(arr) {
@@ -36,6 +36,9 @@ function fisherYatesShuffle(arr) {
 //製作實際可以看到的list
 function creatList() {
   let placeArr = [...bestPlace];
+
+  //console.log(placeArr);
+
   fisherYatesShuffle(placeArr);
   $.each(placeArr, function (index, place) {
     const listItem = $('<li></li>').appendTo('#draggable-list');
@@ -56,57 +59,12 @@ function creatList() {
 
   addEventListeners()
 }
-creatList();
+
 
 //監聽事件
 function addEventListeners() {
   const draggables = document.querySelectorAll('.draggable');
   const dragListItems = document.querySelectorAll('.draggable-list li');
-
-  //拖拉的各函式
-  function dragStart() {
-    // console.log('Event: ', 'dragstart');
-    dragStartIndex = +this.closest('li').getAttribute('data-index');
-  }
-
-  function dragStart() {
-    //console.log('Event: ', 'dragstart');
-    dragStartIndex = +$(this).closest('li').attr('data-index');
-
-    console.log(dragStartIndex);
-  };
-  function dragOver(e) {
-    // console.log('Event: ', 'dragover');
-    e.preventDefault();
-  }
-  //設定開始的index,以及結束的index是為了交換
-  function dragDrop() {
-    // console.log('Event: ', 'dragdrop');
-    const dragEndIndex = +$(this).attr('data-index');
-    swapItems(dragStartIndex, dragEndIndex);
-    $(this).removeClass('over');
-  }
-
-  function swapItems(fromIndex, toIndex) {
-    //要設定交換之前，要先到dragover去設定e.preventDefault();（因為dragover會擋到交換的執行）
-
-    const itemOne = listItems[fromIndex].find('.draggable');
-    const itemTwo = listItems[toIndex].find('.draggable');
-
-    console.log(itemOne, itemTwo)
-    listItems[fromIndex].append(itemTwo);
-    listItems[toIndex].append(itemOne);
-  }
-
-  function dragEnter() {
-    // console.log('Event: ', 'dragenter');
-    $(this).addClass('over');
-  }
-  function dragLeave() {
-    // console.log('Event: ', 'dragleave');
-    $(this).removeClass('over');
-  }
-
 
   //Dragable dot 增加監聽事件
 
@@ -118,20 +76,60 @@ function addEventListeners() {
     item.addEventListener('drop', dragDrop);
     item.addEventListener('dragenter', dragEnter);
     item.addEventListener('dragleave', dragLeave);
-  })
+  });
 
 }
 
 
+//要能夠持續追蹤每個項目的index，所以要有個初始變數
+let dragStartIndex;
+//拖拉的各函式
+function dragStart() {
+  //console.log('Event: ', 'dragstart');
+  dragStartIndex = +$(this).closest('li').attr('data-index');
 
+  console.log(dragStartIndex);
+};
+function dragOver(e) {
+  // console.log('Event: ', 'dragover');
+  e.preventDefault();
+}
+//設定開始的index,以及結束的index是為了交換
+function dragDrop() {
+  // console.log('Event: ', 'dragdrop');
+  const dragEndIndex = +$(this).attr('data-index');
+  swapItems(dragStartIndex, dragEndIndex);
+  $(this).removeClass('over');
+}
+
+function swapItems(fromIndex, toIndex) {
+  //要設定交換之前，要先到dragover去設定e.preventDefault();（因為dragover會擋到交換的執行）
+
+  const itemOne = listItems[fromIndex].find('.draggable');
+  const itemTwo = listItems[toIndex].find('.draggable');
+
+  //console.log(itemOne, itemTwo)
+  listItems[fromIndex].append(itemTwo);
+  listItems[toIndex].append(itemOne);
+}
+
+function dragEnter() {
+  // console.log('Event: ', 'dragenter');
+  $(this).addClass('over');
+}
+function dragLeave() {
+  // console.log('Event: ', 'dragleave');
+  $(this).removeClass('over');
+}
 
 
 //核對排名順序
 function checkOrder() {
   listItems.forEach((listItem, index) => {
-    const personName = listItem.find('.draggable').text().trim();
+    const placeName = listItem.find('.draggable').text().trim();
+    console.log(bestPlace[index]);
 
-    if (personName !== bestPlace[index]) {
+    if (placeName !== bestPlace[index]) {
       listItem.addClass('wrong');
     } else {
       listItem.removeClass('wrong');
@@ -142,4 +140,4 @@ function checkOrder() {
 
 
 
-$('#check').click(checkOrder); 
+
