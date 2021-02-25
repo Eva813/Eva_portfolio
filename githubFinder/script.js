@@ -12,13 +12,18 @@ $('#searchUser').keyup(function () {
 });
 
 function getGithubUser(username) {
-  let url = `https://api.github.com/users/${username}`
+  let url = `https://api.github.com/users/${username}?access_token=aec2689d3f9be4d85108db41496c1670e16e10ca`;
   $.ajax({
     type: "get",
     url: url,
     dataType: "json",
+
+
     success: function (data) {
-      insertProfile(data);
+      if (data.message === "Not Found") {
+        console.log('wrong');
+      } else { insertProfile(data); }
+
     }
   });
 }
@@ -43,7 +48,9 @@ function insertProfile(user) {
               <li class="list-group-item">Member Since: ${user.created_at}</li>
             </ul>
           </div>
-        </div>`
+        </div>
+        <h3 class="page-heading mb-3">Latest Repos</h3>    
+        `
 
   $('#profile').html(words);
 }
