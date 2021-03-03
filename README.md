@@ -7,3 +7,6 @@
 5.https://eva813.github.io/Eva_portfolio/expenseTracker/expenseTracker.html
 6.https://eva813.github.io/Eva_portfolio/musicPlayer/musicPlayer.html
 7.https://eva813.github.io/Eva_portfolio/scrollBlog/scrollBlog.html
+8.https://eva813.github.io/Eva_portfolio/typeGame/typeGame.html
+9.https://eva813.github.io/Eva_portfolio/guessNumber/guessNumber.html
+10.https://eva813.github.io/Eva_portfolio/countDown/countDown.html
