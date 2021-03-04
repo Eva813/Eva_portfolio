@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Weather Forecast</title>
 </head>
 
@@ -14,13 +15,26 @@
       <form>
         <input type="text" placeholder="Search for a city" autofocus>
         <button type="submit">SUBMIT</button>
-        <span class="msg"></span>
+        <!-- 回應相對的回付文字 -->
+        <span class="msg">促次</span>
       </form>
     </div>
   </section>
   <section class="ajax-section">
     <div class="container">
       <ul class="cities"></ul>
+      <!-- 透過js插入 -->
+      <li class="city">
+        <h2 class="city-name" data-name="...">
+          <span>...</span>
+          <sup>...</sup>
+        </h2>
+        <span class="city-temp">...<sup>°C</sup></span>
+        <figure>
+          <img class="city-icon" src="..." alt="...">
+          <figcaption>...</figcaption>
+        </figure>
+      </li>
     </div>
   </section>
 </body>
