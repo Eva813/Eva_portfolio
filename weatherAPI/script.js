@@ -30,15 +30,17 @@ function getWeather() {
 };
 
 function insertdata(data, locationIndex) {
-  console.log(data, locationIndex)
+  //console.log(data, locationIndex)
   let name = data.records.location[locationIndex].locationName;
   let weather = data.records.location[locationIndex].weatherElement;
   console.log(name);
   console.log(weather);
   // 天氣描述
-  let weatherDescription = weather[6].time[0].elementValue[0].value;
-  let weatherTemp = data.location[cityNum].weatherElement[1].time[0].elementValue[0].value;
+  let weatherDescription = weather[0].time[0].parameter[1].parameterValue;
+  let maxTemp = data.location[cityNum].weatherElement[1].time[0].elementValue[0].value;
+  let minTemp = data.location[cityNum].weatherElement[1].time[0].elementValue[0].value;
   let weatherImg = changeImg(weatherDescription);
+  console.log(weatherDescription)
 
   // const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]
   //   }@2x.png`;
