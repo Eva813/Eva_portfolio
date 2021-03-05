@@ -1,3 +1,4 @@
+let locationIndex = 5;
 $(document).ready(function () {
   $('button').click(function (e) {
     e.preventDefault();
@@ -6,7 +7,7 @@ $(document).ready(function () {
     getWeather(value);
   })
 });
-let locationIndex = 5;
+
 
 
 function getWeather() {
@@ -18,7 +19,7 @@ function getWeather() {
     dataType: "json",
     success: function (data) {
       console.log(data);
-      insertdata(data, locationNum);
+      insertdata(data, locationIndex);
     },
     error: function (err) {
       console.log('oh no')
@@ -27,12 +28,18 @@ function getWeather() {
 
 
 };
-let locationNum = 0;
-function insertdata(data, locationNum) {
-  // console.log(data, locationNum)
-  let name = data.location[locationNum].locationName;
-  let weather = data.location[locationNum].weatherElement;
+
+function insertdata(data, locationIndex) {
+  console.log(data, locationIndex)
+  let name = data.records.location[locationIndex].locationName;
+  let weather = data.records.location[locationIndex].weatherElement;
   console.log(name);
+  console.log(weather);
+  // 天氣描述
+  let weatherDescription = weather[6].time[0].elementValue[0].value;
+  let weatherTemp = data.location[cityNum].weatherElement[1].time[0].elementValue[0].value;
+  let weatherImg = changeImg(weatherDescription);
+
   // const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]
   //   }@2x.png`;
   let li = $('<li></li>');
