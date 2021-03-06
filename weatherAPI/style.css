@@ -156,7 +156,7 @@ body {
 }
  
 .ajax-section .city::after {
-  content: ’’;
+  content: '';
   width: 90%;
   height: 50px;
   position: absolute;
@@ -175,7 +175,7 @@ body {
 }
  
 .ajax-section .city-temp {
-  font-size: 5rem;
+  font-size: 2.2rem;
   font-weight: bold;
   margin-top: 10px;
   color: var(--text_dark);
