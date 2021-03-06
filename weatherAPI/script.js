@@ -1,4 +1,4 @@
-let locationIndex = 5;
+
 $(document).ready(function () {
   $('button').click(function (e) {
     e.preventDefault();
@@ -19,8 +19,8 @@ function getWeather() {
 
     dataType: "json",
     success: function (data) {
-      console.log(data);
-      insertdata(data, locationIndex);
+      console.log(data)
+      insertdata(data, locationName);
     },
     error: function (err) {
       console.log('oh no')
@@ -30,11 +30,11 @@ function getWeather() {
 
 };
 
-function insertdata(data, locationIndex) {
+function insertdata(data, locationName) {
   //console.log(data, locationIndex)
-  let name = data.records.location[locationIndex].locationName;
+  let name = data.records.location.locationName;
   let weather = data.records.location[locationIndex].weatherElement;
-  // console.log(name);
+  console.log(name);
   // console.log(weather);
   // 天氣描述
   let weatherDescription = weather[0].time[0].parameter.parameterName;
@@ -54,7 +54,7 @@ function insertdata(data, locationIndex) {
   </h2>
   <div class="city-temp">${Math.round(minTemp)}<sup>°C</sup> ~ ${Math.round(maxTemp)}<sup>°C</sup>
   </div>
-  <figure>
+  <figure class='weather-icon'>
     ${weatherImg}
     <figcaption>${weatherDescription}</figcaption>
   </figure>
@@ -63,19 +63,8 @@ function insertdata(data, locationIndex) {
   $('.cities').append(li);
 };
 
-function checkImg() {
-  let weatherCode = weather[0].time[0].parameter.parameterValue;
-
-  if (weatherCode === isThunderstorm) {
-    return '<img class="city-icon src="images/svg/sunny.svg" alt="weather-img">';
-  } else if (weatherCode === '多雲時晴' || weatherCode === '多雲') {
-    return '<img  class="city-icon src="images/svg/sun-cloudy.svg" alt="weather-img">';
-  } else if (weatherCode === '多雲時陰' || weatherCode === '陰時多雲' || weatherCode === '陰天') {
-    return '<img class="city-icon src="images/svg/cloudy.svg" alt="weather-img">';
-  } else {
-    return '<img class="city-icon src="images/svg/rainy.svg" alt="weather-img">';
-  }
-
+function checkImg(data) {
+  let weatherData = +data;
   const weatherTypes = {
     isThunderstorm: [15, 16, 17, 18, 21, 22, 33, 34, 35, 36, 41],
     isClear: [1],
@@ -89,4 +78,26 @@ function checkImg() {
     ],
     isSnowing: [23, 37, 42],
   };
+  // console.log(data)
+  // console.log(weatherTypes.isPartiallyClearWithRain)
+
+  // let s = weatherTypes.isThunderstorm.includes(weatherData);
+  // console.log(s);
+
+
+
+  if (weatherTypes.isThunderstorm.includes(weatherData)) {
+    return `<img class="city-icon" src="./img/thunderstorm.png" alt="weather-img">`;
+  } else if (weatherTypes.isClear.includes(weatherData)) {
+    return `<img class="city-icon" src="./img/clear.png" alt="weather-img">`;
+  } else if (weatherTypes.isCloudyFog.includes(weatherData)) {
+    return `<img class="city-icon" src="./img/cloudyfog.png" alt="weather-img">`;
+  } else if (weatherTypes.isCloudy.includes(weatherData)) {
+    return `<img class="city-icon" src="./img/cloud-and-sun.png" alt="weather-img">`;
+  } else if (weatherTypes.isFog.includes(weatherData)) {
+    return `<img class="city-icon" src="./img/fog.png" alt="weather-img">`;
+  } else if (weatherTypes.isPartiallyClearWithRain.includes(weatherData)) {
+    return `<img class="city-icon" src="./img/clearwithrainy.png" alt="weather-img">`;
+  } else { return `<img class="city-icon" src="./img/snow.png" alt="weather-img">`; }
+
 }
