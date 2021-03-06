@@ -1,4 +1,4 @@
-
+let locationIndex = 5;
 $(document).ready(function () {
   $('button').click(function (e) {
     e.preventDefault();
@@ -19,8 +19,9 @@ function getWeather() {
 
     dataType: "json",
     success: function (data) {
-      console.log(data)
-      insertdata(data, locationName);
+      console.log(data);
+
+      insertdata(data, locationIndex);
     },
     error: function (err) {
       console.log('oh no')
@@ -30,11 +31,11 @@ function getWeather() {
 
 };
 
-function insertdata(data, locationName) {
-  //console.log(data, locationIndex)
-  let name = data.records.location.locationName;
+function insertdata(data, locationIndex) {
+  console.log(data, locationIndex)
+  let name = data.records.location[locationIndex].locationName;
   let weather = data.records.location[locationIndex].weatherElement;
-  console.log(name);
+  // console.log(name);
   // console.log(weather);
   // 天氣描述
   let weatherDescription = weather[0].time[0].parameter.parameterName;
