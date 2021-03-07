@@ -11,7 +11,7 @@ $(document).ready(function (e) {
 
 
 function getCity() {
-  let url = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-091?Authorization=CWB-F0145DA5-2539-4333-BAFD-466910C1EECC&format=JSON";
+  let url = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-F0145DA5-2539-4333-BAFD-466910C1EECC&format=JSON";
 
   $.ajax({
     type: "get",
@@ -21,10 +21,10 @@ function getCity() {
     success: function (data) {
       console.log(data);
       let selectCity = $('#sector-list');
-      for (let i = 0; i < data.records.locations[0].location.length; i++) {
+      for (let i = 0; i < data.records.location.length; i++) {
         let opt = $('<option></option>');
         opt.attr("data-index", i);
-        opt.html(data.records.locations[0].location[i].locationName);
+        opt.html(data.records.location[i].locationName);
         selectCity.append(opt);
       }
       $('button').click(function (e) {
@@ -48,34 +48,21 @@ function clear() {
   $('.cities').html('');
 }
 
-// 抓取日期
-
-function getDate() {
-  let today = new Date();
-  console.log(today)
-  return today;
-
-}
-getDate()
-
-
 function getWeather(data, locationIndex) {
 
   //console.log(data, locationIndex)
-  let name = data.records.locations[0].location[locationIndex].locationName;
-  let weather = data.records.locations[0].location[locationIndex].weatherElement;
-  //console.log(name);
-  //console.log(weather);
+  let name = data.records.location[locationIndex].locationName;
+  let weather = data.records.location[locationIndex].weatherElement;
+  // console.log(name);
+  // console.log(weather);
   // 天氣描述
-  let weatherDescription = weather[6].time[0].elementValue[0].value;
-  let weatherCode = weather[6].time[0].elementValue[1].value;
-  let minTemp = weather[8].time[0].elementValue[0].value;
-  let maxTemp = weather[12].time[0].elementValue[0].value;
+  let weatherDescription = weather[0].time[0].parameter.parameterName;
+  let weatherCode = weather[0].time[0].parameter.parameterValue;
+  let minTemp = weather[2].time[0].parameter.parameterName;
+  let maxTemp = weather[4].time[0].parameter.parameterName;
   let weatherImg = checkImg(weatherCode);
-  // 今天日期
-  let date = getDate().toUTCString();
 
-  console.log(weatherCode);
+
 
   let li = $('<li></li>').appendTo('.cities');
   li.addClass("city");
@@ -95,15 +82,8 @@ function getWeather(data, locationIndex) {
   $('.cities').append(li);
 };
 
-
-
-function weekWeather() {
-
-}
-
-
 function checkImg(data) {
-  let weatherData = +data;
+  let weatherData = data;
   const weatherTypes = {
     isThunderstorm: [15, 16, 17, 18, 21, 22, 33, 34, 35, 36, 41],
     isClear: [1],
@@ -142,3 +122,15 @@ function checkImg(data) {
 }
 
 
+function getweek() {
+  let weekurl = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-091?Authorization=CWB-F0145DA5-2539-4333-BAFD-466910C1EECC&format=JSON"
+  $.ajax({
+    type: "get",
+    url: weekurl,
+    dataType: "json",
+    success: function (res) {
+      console.log(res)
+    }
+  });
+}
+getweek()
