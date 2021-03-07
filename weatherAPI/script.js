@@ -146,31 +146,31 @@ function weekWeather(data, locationIndex) {
     $('.week-ul').append(weekday);
   }
 }
-nextweek()
-function nextweek() {
-  for (let i = 1; i < 7; i++) {
-    let today = new Date();
-    let tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + i);
-    let weekDay = tomorrow.getDay();
-    let weekMonth = tomorrow.getMonth()
-    let date = tomorrow.getDate();
-    const dayNamesEn = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    const monthNamesEn = [
-      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-    ]
-    let inweekDay = dayNamesEn[weekDay]
-    let inweekMonth = monthNamesEn[weekMonth];
-    let indate = date;
+// 測試取得隔一天的日期，並擷取其中的日期、月份、星期，nextweek()
+// function nextweek() {
+//   for (let i = 1; i < 7; i++) {
+//     let today = new Date();
+//     let tomorrow = new Date(today);
+//     tomorrow.setDate(tomorrow.getDate() + i);
+//     let weekDay = tomorrow.getDay();
+//     let weekMonth = tomorrow.getMonth()
+//     let date = tomorrow.getDate();
+//     const dayNamesEn = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+//     const monthNamesEn = [
+//       'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+//       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+//     ]
+//     let inweekDay = dayNamesEn[weekDay]
+//     let inweekMonth = monthNamesEn[weekMonth];
+//     let indate = date;
 
-    console.log(dayNamesEn[weekDay]); //Friday
-    console.log(monthNamesEn[weekMonth])
-    console.log(date);
-    // console.log(tomorrow.toUTCString());
+//     console.log(dayNamesEn[weekDay]); //Friday
+//     console.log(monthNamesEn[weekMonth])
+//     console.log(date);
+//     // console.log(tomorrow.toUTCString());
 
-  }
-}
+//   }
+// }
 
 
 function checkImg(data) {
