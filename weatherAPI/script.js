@@ -32,7 +32,7 @@ function getCity() {
         clear();
         let selectedCityIndex = $('#sector-list').get(0).selectedIndex;
         getWeather(data, selectedCityIndex);
-
+        weekWeather(data, selectedCityIndex)
       })
 
     },
@@ -97,8 +97,20 @@ function getWeather(data, locationIndex) {
 
 
 
-function weekWeather() {
+function weekWeather(data, locationIndex) {
+  let weather = data.records.locations[0].location[locationIndex].weatherElement;
+  for (let i = 0; i < 7; i++) {
+    let timeIndex = i + 2;
+    let weekday = $('<li></li>').appendTo('.future-days');
+    weekday.addClass('day').attr('id', `day-${i}`);
 
+    let weatherDescription = weather[6].time[timeIndex].elementValue[0].value;
+    let weatherCode = weather[6].time[timeIndex].elementValue[1].value;
+    let minTemp = weather[8].time[timeIndex].elementValue[0].value;
+    let maxTemp = weather[12].time[timeIndex].elementValue[0].value;
+    let weatherImg = checkImg(weatherCode);
+
+  }
 }
 
 
