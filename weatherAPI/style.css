@@ -153,6 +153,7 @@ body {
   border-radius: 20px;
   background: var(--text_light);
   color: var(--text_med);
+  margin-bottom: 15px;
 }
  
 .ajax-section .city::after {
@@ -166,6 +167,7 @@ body {
   opacity: 0.3;
   border-radius: 20px;
   background: var(--text_light);
+  
 }
  
 .ajax-section figcaption {
@@ -197,3 +199,84 @@ body {
   width: 100px;
   height: 100px;
 }
+
+
+/* 一週 */
+
+/* li裡面的圖卡樣式 */
+.ajax-section .day {
+  position: relative;
+  padding: 40px 10%;
+  border-radius: 20px;
+  background: var(--text_light);
+  color: var(--text_med);
+}
+ 
+.ajax-section .day::after {
+  content: '';
+  width: 90%;
+  height: 50px;
+  position: absolute;
+  bottom: -12px;
+  left: 5%;
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 20px;
+  background: var(--text_light);
+}
+ 
+.ajax-section figcaption {
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+ 
+.ajax-section .city-temp {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--text_dark);
+}
+ 
+.ajax-section .day sup {
+  font-size: 0.5em;
+}
+ 
+.ajax-section .city-name sup {
+  padding: 0.2em 0.6em;
+  border-radius: 30px;
+  color: var(--text_light);
+  background: var(--orange);
+}
+ 
+.ajax-section .city-icon {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+/* 分割 */
+.ajax-section .week-ul {
+  display: grid;
+  grid-gap: 30px 10px;
+   grid-template-columns: repeat(6, 1fr); 
+ /* grid-template-columns: repeat(auto-fit, 150px); */
+}
+ 
+ @media screen and (max-width: 1000px) { 
+  .ajax-section .week-ul {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+ 
+@media screen and (max-width: 700px) {
+  .ajax-section .week-ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+ 
+@media screen and (max-width: 500px) {  
+  .ajax-section .week-ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} 
