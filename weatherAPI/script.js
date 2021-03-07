@@ -32,7 +32,7 @@ function getCity() {
         clear();
         let selectedCityIndex = $('#sector-list').get(0).selectedIndex;
         getWeather(data, selectedCityIndex);
-        weekWeather(data, selectedCityIndex)
+        weekWeather(data, selectedCityIndex);
       })
 
     },
@@ -46,17 +46,18 @@ function getCity() {
 // 資料清除
 function clear() {
   $('.cities').html('');
+  $('.week-ul').html('');
 }
 
 // 抓取日期
 
-function getDate() {
-  let today = new Date();
-  console.log(today)
-  return today;
+// function getDate() {
+//   let today = new Date();
+//   console.log(today)
+//   return today;
 
-}
-getDate()
+// }
+// getDate()
 
 
 function getWeather(data, locationIndex) {
@@ -73,7 +74,7 @@ function getWeather(data, locationIndex) {
   let maxTemp = weather[12].time[0].elementValue[0].value;
   let weatherImg = checkImg(weatherCode);
   // 今天日期
-  let date = getDate().toUTCString();
+  // let date = getDate().toUTCString();
 
   console.log(weatherCode);
 
@@ -82,7 +83,7 @@ function getWeather(data, locationIndex) {
   li.html(`
   <h2 class="city-name" data-name="${name},">
     <span>${name}</span>
-    <sup>2</sup>
+    <sup>Today</sup>
   </h2>
   <div class="city-temp">${Math.round(minTemp)}<sup>°C</sup> ~ ${Math.round(maxTemp)}<sup>°C</sup>
   </div>
@@ -98,10 +99,11 @@ function getWeather(data, locationIndex) {
 
 
 function weekWeather(data, locationIndex) {
-  let weather = data.records.locations[0].location[locationIndex].weatherElement;
-  for (let i = 0; i < 7; i++) {
-    let timeIndex = i + 2;
-    let weekday = $('<li></li>').appendTo('.future-days');
+  $('.week-ul').html('');
+  var weather = data.records.locations[0].location[locationIndex].weatherElement;
+  for (let i = 1; i < 7; i++) {
+    let timeIndex = 2 * i;
+    let weekday = $('<li></li>').appendTo('.week-ul');
     weekday.addClass('day').attr('id', `day-${i}`);
 
     let weatherDescription = weather[6].time[timeIndex].elementValue[0].value;
@@ -109,6 +111,63 @@ function weekWeather(data, locationIndex) {
     let minTemp = weather[8].time[timeIndex].elementValue[0].value;
     let maxTemp = weather[12].time[timeIndex].elementValue[0].value;
     let weatherImg = checkImg(weatherCode);
+    console.log(weatherDescription);
+
+    ////////////
+    let today = new Date();
+    let tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + i);
+    let weekDay = tomorrow.getDay();
+    let weekMonth = tomorrow.getMonth()
+    let date = tomorrow.getDate();
+    const dayNamesEn = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const monthNamesEn = [
+      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    ]
+    let inweekDay = dayNamesEn[weekDay]
+    let inweekMonth = monthNamesEn[weekMonth];
+    let indate = date;
+    ///////////
+
+
+    weekday.html(`<li class="day">
+          <h2 class="whichDay" data-name="">
+            <span>${indate} ${inweekMonth}</span>
+            <sup>${inweekDay}</sup>
+          </h2>
+          <div class="city-temp">${minTemp}<sup>°C</sup> ~ ${maxTemp}<sup>°C</sup>
+          </div>
+          <figure class='weather-icon'>
+            ${weatherImg}
+            <figcaption>${weatherDescription}</figcaption>
+          </figure>
+        </li>`)
+    $('.week-ul').append(weekday);
+  }
+}
+nextweek()
+function nextweek() {
+  for (let i = 1; i < 7; i++) {
+    let today = new Date();
+    let tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + i);
+    let weekDay = tomorrow.getDay();
+    let weekMonth = tomorrow.getMonth()
+    let date = tomorrow.getDate();
+    const dayNamesEn = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const monthNamesEn = [
+      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    ]
+    let inweekDay = dayNamesEn[weekDay]
+    let inweekMonth = monthNamesEn[weekMonth];
+    let indate = date;
+
+    console.log(dayNamesEn[weekDay]); //Friday
+    console.log(monthNamesEn[weekMonth])
+    console.log(date);
+    // console.log(tomorrow.toUTCString());
 
   }
 }

@@ -242,7 +242,7 @@ body {
   font-size: 0.5em;
 }
  
-.ajax-section .city-name sup {
+.ajax-section .whichDay sup {
   padding: 0.2em 0.6em;
   border-radius: 30px;
   color: var(--text_light);
