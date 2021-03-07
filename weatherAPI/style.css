@@ -280,3 +280,21 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 } 
+
+/* 修改下拉選單 */
+#sector-list {
+    padding: 5px 8px;
+    font-weight: 600;
+    font-size: 18px;
+    width: 50%;
+   color: #fff;
+    outline-color: #ff8c00;
+    border-radius: 10px;
+    line-height: 2;
+    /* box-shadow: none; */
+    background-color: #0a1f44;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}

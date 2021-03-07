@@ -3,7 +3,9 @@ $(document).ready(function (e) {
   getCity();
 
   //https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/287007/
-
+  $('#sector-list').change(function () {
+    $('.msg').text('別忘了按下SUBMIT')
+  })
 
 
 });
