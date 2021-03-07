@@ -76,7 +76,7 @@ body {
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0.1em;
-  padding: 15px 20px;
+  padding: 9px 20px;
   margin-left: 15px;
   border-radius: 5px;
   background: var(--red);
@@ -282,7 +282,10 @@ body {
 } 
 
 /* 修改下拉選單 */
-#sector-list {
+
+
+/* #selector-list {
+  display: inline-block;
     padding: 5px 8px;
     font-weight: 600;
     font-size: 18px;
@@ -291,10 +294,24 @@ body {
     outline-color: #ff8c00;
     border-radius: 10px;
     line-height: 2;
-    /* box-shadow: none; */
-    background-color: #0a1f44;
+    
+    background-color: transparent; 
     background-image: none;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+     -webkit-appearance: none; 
+        -moz-appearance: none; 
+             appearance: none; 
+} */
+
+#selector-list{
+  border:none;
+  border-radius: 5px;
+  
+  outline:none;
+  width:300px;
+  height:30px;
+  font-weight: 600;
+  font-size:18px;
+  padding: 5px 8px;
+  color:#1d1e22;
+
 }

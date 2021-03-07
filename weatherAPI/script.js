@@ -3,13 +3,12 @@ $(document).ready(function (e) {
   getCity();
 
   //https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/287007/
-  $('#sector-list').change(function () {
-    $('.msg').text('別忘了按下SUBMIT')
+  $('#selector-list').change(function () {
+    $('.msg').text('別忘了按下SUBMIT');
   })
 
 
 });
-
 
 
 function getCity() {
@@ -22,7 +21,7 @@ function getCity() {
     dataType: "json",
     success: function (data) {
       console.log(data);
-      let selectCity = $('#sector-list');
+      let selectCity = $('#selector-list');
       for (let i = 0; i < data.records.locations[0].location.length; i++) {
         let opt = $('<option></option>');
         opt.attr("data-index", i);
@@ -32,7 +31,7 @@ function getCity() {
       $('button').click(function (e) {
         e.preventDefault();
         clear();
-        let selectedCityIndex = $('#sector-list').get(0).selectedIndex;
+        let selectedCityIndex = $('#selector-list').get(0).selectedIndex;
         getWeather(data, selectedCityIndex);
         weekWeather(data, selectedCityIndex);
       })
@@ -49,6 +48,7 @@ function getCity() {
 function clear() {
   $('.cities').html('');
   $('.week-ul').html('');
+  $('.msg').text('');
 }
 
 // 抓取日期
@@ -101,7 +101,7 @@ function getWeather(data, locationIndex) {
 
 
 function weekWeather(data, locationIndex) {
-  $('.week-ul').html('');
+  // $('.week-ul').html('');
   var weather = data.records.locations[0].location[locationIndex].weatherElement;
   for (let i = 1; i < 7; i++) {
     let timeIndex = 2 * i;
