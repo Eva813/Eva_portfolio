@@ -24,7 +24,7 @@ const bestPlace = [
 const listItems = [];
 
 
-//Fisher-Yates洗牌演算法
+//Fisher-Yates洗牌演算法，隨機亂數
 function fisherYatesShuffle(arr) {
   for (var i = arr.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1)); //random index
@@ -35,6 +35,7 @@ function fisherYatesShuffle(arr) {
 
 //製作實際可以看到的list
 function creatList() {
+  //展開
   let placeArr = [...bestPlace];
 
   //console.log(placeArr);
@@ -57,7 +58,7 @@ function creatList() {
     $('#draggable-list').append(listItem);
   });
 
-  addEventListeners()
+  addEventListeners();
 }
 
 
