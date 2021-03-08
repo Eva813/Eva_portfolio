@@ -48,8 +48,10 @@ function getCity() {
 // 資料清除
 function clear() {
   $('.cities').html('');
+  $('.sec-h2').empty('');
   $('.week-ul').html('');
   $('.msg').text('');
+
 }
 
 // 抓取日期
@@ -79,7 +81,7 @@ function getWeather(data, locationIndex) {
   // 今天日期
   // let date = getDate().toUTCString();
 
-  console.log(weatherCode);
+  //console.log(weatherCode);
 
   let li = $('<li></li>').appendTo('.cities');
   li.addClass("city");
