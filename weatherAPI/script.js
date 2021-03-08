@@ -32,6 +32,7 @@ function getCity() {
         e.preventDefault();
         clear();
         let selectedCityIndex = $('#selector-list').get(0).selectedIndex;
+
         getWeather(data, selectedCityIndex);
         weekWeather(data, selectedCityIndex);
       })
@@ -94,8 +95,9 @@ function getWeather(data, locationIndex) {
     <figcaption>${weatherDescription}</figcaption>
   </figure>
 `);
-
+  $('.cities').after(`<h2 class="sec-h2">未來一週預報</h2>`)
   $('.cities').append(li);
+
 };
 
 
@@ -113,9 +115,9 @@ function weekWeather(data, locationIndex) {
     let minTemp = weather[8].time[timeIndex].elementValue[0].value;
     let maxTemp = weather[12].time[timeIndex].elementValue[0].value;
     let weatherImg = checkImg(weatherCode);
-    console.log(weatherDescription);
+    //console.log(weatherDescription);
 
-    ////////////
+    //////日期、星期的擷取//////
     let today = new Date();
     let tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + i);
@@ -138,7 +140,7 @@ function weekWeather(data, locationIndex) {
             <span>${indate} ${inweekMonth}</span>
             <sup>${inweekDay}</sup>
           </h2>
-          <div class="city-temp">${minTemp}<sup>°C</sup> ~ ${maxTemp}<sup>°C</sup>
+          <div class="week-temp">${minTemp}<sup>°C</sup> ~ ${maxTemp}<sup>°C</sup>
           </div>
           <figure class='weather-icon'>
             ${weatherImg}
@@ -175,8 +177,9 @@ function weekWeather(data, locationIndex) {
 // }
 
 
-function checkImg(data) {
-  let weatherData = +data;
+function checkImg(code) {
+  // console.log(code)
+  let weatherData = +code;
   const weatherTypes = {
     isThunderstorm: [15, 16, 17, 18, 21, 22, 33, 34, 35, 36, 41],
     isClear: [1],

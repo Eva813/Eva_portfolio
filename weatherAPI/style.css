@@ -121,7 +121,11 @@ body {
 .ajax-section {
   margin: 50px 0 20px;
 }
- 
+ .ajax-section .sec-h2 {
+   color: ivory;
+   font-size: 2em;
+   margin: 10px;
+ }
 .ajax-section .cities {
   display: grid;
   grid-gap: 32px 20px;
@@ -241,7 +245,13 @@ body {
 .ajax-section .day sup {
   font-size: 0.5em;
 }
- 
+.day .week-temp{
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--text_dark);
+} 
+
 .ajax-section .whichDay sup {
   padding: 0.2em 0.6em;
   border-radius: 30px;
@@ -265,20 +275,32 @@ body {
  
  @media screen and (max-width: 1000px) { 
   .ajax-section .week-ul {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
  
 @media screen and (max-width: 700px) {
   .ajax-section .week-ul {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
+  .day .week-temp{
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--text_dark);
+} 
 }
  
 @media screen and (max-width: 500px) {  
   .ajax-section .week-ul {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
+  .day .week-temp{
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 5px;
+  color: var(--text_dark);
+} 
 } 
 
 /* 修改下拉選單 */
