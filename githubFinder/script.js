@@ -1,5 +1,5 @@
 //取輸入框的值
-//如果值內不是空白，github,getuser().then (data，如果data 是 )
+//如果值內不是空白，github,getuser().then (data )
 
 $(document).ready(function () {
   $('#searchUser').keyup(function () {
@@ -85,7 +85,7 @@ function insertProfile(user) {
 
 
 
-
+// 取得專案資料
 function getUserRepo(user) {
   let page = 5;
   let sort = 'creat:asc';
