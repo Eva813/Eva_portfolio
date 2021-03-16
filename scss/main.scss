@@ -22,15 +22,27 @@ $font-sm:20px;
     }
   }
 }
+// 發現h1,h3樣式一樣
+@mixin headingStyles($fontSize){
+  //以代參數方式來放入不同字體大小的變數設定
+  font-size: $fontSize;
+ color: $color-secondary;
+  text-align: center;
+} 
+
+@mixin transition($param...) {
+  transition: $param;
+}
 .banner h1{
  
-  font-size: $font-lg;
-  color: $color-secondary;
-  text-align: center;
+ @include headingStyles($font-lg);
 }
 .footer h3{
-  font-size: $font-md;
-  color: $color-secondary;
-  text-align: center;
 
+  @include headingStyles($font-md);
+  @include transition(color .5s ,background-color 1s);
+  &:hover{
+    color:$color-tertiary;
+    background-color: $color-primary;
+  }
 }
