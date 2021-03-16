@@ -9,7 +9,7 @@ $font-md:30px;
 $font-sm:20px;
 
 .nav{
-  background-color: $color-primary;
+   background-color: mix(blue,green,10%);
   ul li{
     list-style: none;
   }
@@ -29,6 +29,11 @@ $font-sm:20px;
   background-color: $color-secondary;
   text-align: center;
 }
+//設定預設為25px
+@function fontSize($size:25px){
+   @return $size*2;
+}
+
 
  h1{
  @extend .heading;
@@ -40,4 +45,11 @@ $font-sm:20px;
 .footer h3{
  @extend  h1;
 
+}
+
+.banner p{
+  font-size: fontSize($font-sm);
+}
+.footer p{
+  font-size: fontSize(30px);
 }
