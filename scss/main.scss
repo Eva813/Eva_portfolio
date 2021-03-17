@@ -23,20 +23,17 @@ $font-sm:20px;
   }
 }
 
-.heading{
+%heading{
   color:$color-primary;
   font-size: $font-lg;
   background-color: $color-secondary;
   text-align: center;
 }
-//設定預設為25px
-@function fontSize($size:25px){
-   @return $size*2;
-}
+
 
 
  h1{
- @extend .heading;
+  @extend %heading;
  &:hover{
    background-color: green;
  }
@@ -47,9 +44,3 @@ $font-sm:20px;
 
 }
 
-.banner p{
-  font-size: fontSize($font-sm);
-}
-.footer p{
-  font-size: fontSize(30px);
-}
