@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="./jquery-3.5.1.min.js"></script>
+  <link rel="shortcut icon" href="#">
+  <!-- fancyBox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+  <title>Search with Youtube</title>
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>Search<span>Vidz</span></h1>
+      <p>Search all Youtube videos</p>
+    </header>
+    <section>
+      <!-- https://codepen.io/himalayasingh/pen/dqjLgO -->
+      <div id="search-form">
+        <form action="">
+          <div class="tb">
+            <div class="td">
+              <input id='search-field' type="search" placeholder="Search YouTube..." required>
+            </div>
+            <div class="td" id="s-cover">
+              <button id="search-btn" type="submit">
+                <div id="s-circle"></div>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <ul id="results"></ul>
+      <div id="buttons">
+
+      </div>
+    </section>
+  </div>
+  <script src="./script.js"></script>
+  <!-- <script>//fancyBox
+    $('[data-fancybox]').fancybox({
+      toolbar: false,
+      smallBtn: true,
+      iframe: {
+        preload: false // 自動調整 <iframe> 的寬度 / 高度
+      }
+    });</script> -->
+</body>
+
+
+</html>
