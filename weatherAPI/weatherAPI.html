@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="./jquery-3.5.1.min.js"></script>
+  <title>Weather Forecast</title>
+</head>
+
+<body>
+  <section class="top-banner">
+    <div class="container">
+      <h1 class="heading">Weather Forecast</h1>
+      <form>
+
+        <select id="selector-list"></select>
+
+        <button type="submit">SUBMIT</button>
+
+        <!-- 回應相對的回付文字 -->
+        <span class="msg"></span>
+      </form>
+    </div>
+  </section>
+  <section class="ajax-section">
+    <div class="container">
+      <ul class="cities">
+        <!-- 透過js插入 -->
+        <!-- <li class="city">
+        <h2 class="city-name" data-name="...">
+          <span>...</span>
+          <sup>...</sup>
+        </h2>
+        <span class="city-temp">...<sup>°C</sup></span>
+        <figure>
+          <img class="city-icon" src="" alt="...">
+          <figcaption>...</figcaption>
+        </figure>
+      </li> -->
+      </ul>
+    </div>
+    <div class="container future-days">
+      <!-- 1. -->
+      <ul class="week-ul">
+        <!--<li class="day">
+          <h2 class="whichDay" data-name="">
+            <span>週一</span>
+            <sup>sat</sup>
+          </h2>
+          <div class="city-temp">20<sup>°C</sup> ~ 23<sup>°C</sup>
+          </div>
+          <figure class='weather-icon'>
+            <img src="./img/clear.png" alt="" srcset="">
+            <figcaption>描述天氣</figcaption>
+          </figure>
+        </li> -->
+
+        <!-- 2. -->
+
+        <!-- <li class="day">
+          <h2 class="whichDay" data-name="">
+            <span>週二</span>
+            <sup>sat</sup>
+          </h2>
+          <div class="city-temp">20<sup>°C</sup> ~ 23<sup>°C</sup>
+          </div>
+          <figure class='weather-icon'>
+            <img src="./img/clear.png" alt="" srcset="">
+            <figcaption>描述天氣</figcaption>
+          </figure>
+        </li> -->
+
+        <!-- 3. -->
+
+        <!-- <li class="day">
+          <h2 class="whichDay" data-name="">
+            <span>週三</span>
+            <sup>sat</sup>
+          </h2>
+          <div class="city-temp">20<sup>°C</sup> ~ 23<sup>°C</sup>
+          </div>
+          <figure class='weather-icon'>
+            <img src="./img/clear.png" alt="" srcset="">
+            <figcaption>描述天氣</figcaption>
+          </figure>
+        </li> -->
+
+        <!-- 4. -->
+
+        <!-- <li class="day">
+          <h2 class="whichDay" data-name="">
+            <span>週四</span>
+            <sup>sat</sup>
+          </h2>
+          <div class="city-temp">20<sup>°C</sup> ~ 23<sup>°C</sup>
+          </div>
+          <figure class='weather-icon'>
+            <img src="./img/clear.png" alt="" srcset="">
+            <figcaption>描述天氣</figcaption>
+          </figure>
+        </li> -->
+
+        <!-- 5. -->
+
+        <!-- <li class="day">
+          <h2 class="whichDay" data-name="">
+            <span>週五</span>
+            <sup>sat</sup>
+          </h2>
+          <div class="city-temp">20<sup>°C</sup> ~ 23<sup>°C</sup>
+          </div>
+          <figure class='weather-icon'>
+            <img src="./img/clear.png" alt="" srcset="">
+            <figcaption>描述天氣</figcaption>
+          </figure>
+        </li> -->
+
+        <!-- 6. -->
+
+        <!-- <li class="day">
+          <h2 class="whichDay" data-name="">
+            <span>週六</span>
+            <sup>sat</sup>
+          </h2>
+          <div class="city-temp">20<sup>°C</sup> ~ 23<sup>°C</sup>
+          </div>
+          <figure class='weather-icon'>
+            <img src="./img/clear.png" alt="" srcset="">
+            <figcaption>描述天氣</figcaption>
+          </figure>
+        </li>-->
+      </ul>
+    </div>
+  </section>
+
+
+  <script src="./script.js"></script>
+</body>
+
+
+</html>
