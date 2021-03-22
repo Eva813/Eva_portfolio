@@ -1,0 +1,12 @@
+$colors:(
+  primary:#333,
+  secondary:#ffe,
+  tertiary:#f2f0f1,
+  quaternary:#f5b149
+
+);
+//創造函式
+//函式名稱為color代入參數為$color-name，使用map代入物件，最為回傳的結果
+@function color($color-name){
+  @return map-get($map: $colors, $key:$color-name )
+}
