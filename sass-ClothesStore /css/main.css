@@ -57,6 +57,23 @@ html {
     .second-nav-link:hover {
       color: #999999; }
 
+.slideshow {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  position: relative;
+  width: 100%;
+  height: 80vh; }
+  .slideshow-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit; }
+    .slideshow-slide img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover; }
+
 .logo {
   grid-column: 1/2;
   grid-row: 1/2;
