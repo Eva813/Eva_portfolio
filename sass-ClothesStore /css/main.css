@@ -20,3 +20,11 @@ html {
   grid-template-columns: 1fr repeat(7, minmax(min-content, 16rem)) 1fr;
   grid-template-rows: repeat(3, min-content);
   grid-gap: 2rem; }
+
+.logo {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding: 1rem; }
+  .logo-img {
+    width: 10rem;
+    height: 100%; }
