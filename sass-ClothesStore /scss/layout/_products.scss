@@ -19,6 +19,16 @@
 
 .product{
   position: relative;
+
+  &:hover .product-description{
+    opacity: 1;
+    visibility: visible ;
+  }
+
+  &:hover .product-img{
+    opacity: 0.6;
+     transition: all .7s .3s;
+  }
    &-img{
       width: 100%;
 
@@ -33,7 +43,12 @@
      border: .1rem solid color(primary) ;
      border-radius: .5rem;
      color: color(primary);
+
      text-align: center;
+     opacity: 0;
+     visibility: hidden;
+     transition: all .7s .3s;
+     //.7s(全部時間), .3s(延遲時間)
 
      &-heading{
           font-size: size(xl);
