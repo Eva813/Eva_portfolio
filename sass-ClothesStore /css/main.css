@@ -145,7 +145,29 @@ html {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 238, 0.6);
+    padding: 2rem;
+    border: 0.1rem solid #333;
+    border-radius: .5rem;
+    color: #333;
+    text-align: center; }
+    .product-description-heading {
+      font-size: 3rem; }
+    .product-description-price {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin: 1rem 0; }
+      .product-description-price span {
+        font-weight: 600; }
+    .product-description-btn {
+      font-size: 1.6rem;
+      text-decoration: none;
+      color: #f5b149;
+      display: block;
+      padding: .5rem 1rem;
+      border: 0.1rem solid #f5b149;
+      background-color: #666666; }
 
 .logo {
   grid-column: 1/2;
