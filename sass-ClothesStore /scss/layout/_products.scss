@@ -1,0 +1,18 @@
+.products{
+  //產品佔3row
+  grid-column: 1/-1;
+  grid-row: 3/4;
+
+  &-heading{
+    margin: 5rem 0;
+    //在heading底下的文字區
+     &-text{
+       text-align: center;
+       font-size: size(lg)+2rem;
+       color: color(primary);
+     }
+  }
+  &-wrapper{
+    @include flexPosition;
+  }
+}
