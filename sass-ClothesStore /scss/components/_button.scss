@@ -1,0 +1,44 @@
+.btn{
+  width: 16rem;
+  height: 4rem;
+  text-decoration: none;
+   border:.1rem solid  #000;
+  position: relative;
+  @include flexPosition(space-around);
+
+  &-bg{
+     width: 4rem;
+     height: 4rem;
+    background-color: color(primary) ;
+    //使其變圓形
+     border-radius: 5rem ;
+    position: absolute;
+    left: 0;
+  }
+  &-text{
+    font-size: size(xs);
+    text-transform: uppercase;
+    color: color(primary);
+  }
+  .arrow{
+    @include flexPosition;
+
+    &-line {
+      height: .2rem;
+      background-color: color(secondary);
+      position: absolute;
+  }
+
+    &-line-2 {
+     
+      width: 1rem;
+      transform: rotate(45deg);
+    }
+
+    &-line-3 {
+     
+      width: 1rem;
+      transform: rotate(-45deg);
+    }
+   }
+}

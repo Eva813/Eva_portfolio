@@ -178,6 +178,11 @@ html {
       border: 0.1rem solid #f5b149;
       background-color: #666666; }
 
+.products-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 .logo {
   grid-column: 1/2;
   grid-row: 1/2;
@@ -246,3 +251,38 @@ html {
   .dropdown-link {
     font-weight: 300;
     font-size: 1.6rem; }
+
+.btn {
+  width: 16rem;
+  height: 4rem;
+  text-decoration: none;
+  border: .1rem solid  #000;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .btn-bg {
+    width: 4rem;
+    height: 4rem;
+    background-color: #333;
+    border-radius: 5rem;
+    position: absolute;
+    left: 0; }
+  .btn-text {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: #333; }
+  .btn .arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .btn .arrow-line {
+      height: .2rem;
+      background-color: #ffe;
+      position: absolute; }
+    .btn .arrow-line-2 {
+      width: 1rem;
+      transform: rotate(45deg); }
+    .btn .arrow-line-3 {
+      width: 1rem;
+      transform: rotate(-45deg); }
