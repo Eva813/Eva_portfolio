@@ -14,3 +14,49 @@
 .contact-list{
   @include footerList;
 }
+
+.contact{
+   &-heading{
+     font-size: size(xl);
+     color: color(primary);
+     text-align: center;
+   }
+   &-paragraph{
+     font-size: size(lg);
+     text-align: center;
+     margin: 1rem 0;
+   }
+   .inputs-group{
+     display: flex;
+
+     input{
+       padding: 1rem;
+       font-size: size(xs);
+       margin: 1rem .5rem;
+      border: .1rem solid darken(color(primary),10%);
+       border-radius: .3rem ;
+       outline:none ;
+       transition: border .5s;
+
+       &:focus:not([type="submit"]){
+         border: .1rem solid darken(color(quaternary),30%);
+       }
+     }
+     &-text{
+       width: 50%;
+     }
+     &-email{
+       width: 60%;
+     }
+     &-btn{
+       width: 40%;
+       color: color(secondary);
+       background-color: lighten(color(primary),20%);
+       transition: background-color .2s;
+
+       &:hover{
+         background-color: color(primary);
+       }
+     }
+   }
+}
