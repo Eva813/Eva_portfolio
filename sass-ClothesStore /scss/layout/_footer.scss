@@ -1,0 +1,16 @@
+.footer{
+//footer有三區，中間是表單，左右邊分別為資訊連結
+
+  grid-column: 1/-1;
+  grid-row: 4/5;
+  @include flexPosition(space-around);
+  padding:5rem 0 ;
+  border-top: .1rem solid color(primary);
+}
+//針對ul的部分，去修飾條列的項目
+.footer-nav{
+  @include footerList;
+}
+.contact-list{
+  @include footerList;
+}
