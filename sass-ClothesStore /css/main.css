@@ -258,6 +258,49 @@ html {
     .contact .inputs-group-btn:hover {
       background-color: #333; }
 
+.contact .social-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  box-sizing: border-box; }
+  .contact .social-icons-item {
+    list-style: none; }
+  .contact .social-icons-link {
+    text-decoration: none;
+    width: 4rem;
+    height: 4rem;
+    border: 0.1rem solid #333;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .contact .social-icons-link i {
+      font-size: 2rem; }
+
+.social-icons-item:nth-child(1) .social-icons-link {
+  color: #3b5998;
+  border: 0.1rem solid #3b5998; }
+
+.social-icons-item:nth-child(2) .social-icons-link {
+  color: #b31217;
+  border: 0.1rem solid #b31217; }
+
+.social-icons-item:nth-child(3) .social-icons-link {
+  color: #dc4e41;
+  border: 0.1rem solid #dc4e41; }
+
+.social-icons-item:nth-child(4) .social-icons-link {
+  color: #55acee;
+  border: 0.1rem solid #55acee; }
+
+.social-icons-item:nth-child(5) .social-icons-link {
+  color: #517fa4;
+  border: 0.1rem solid #517fa4; }
+
+.social-icons-item:nth-child(6) .social-icons-link {
+  color: #0077b5;
+  border: 0.1rem solid #0077b5; }
+
 .logo {
   grid-column: 1/2;
   grid-row: 1/2;
