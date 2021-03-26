@@ -6,6 +6,21 @@
   position: relative;
   @include flexPosition(space-around);
 
+  &:hover .btn-bg{
+    width: 18rem;
+  }
+  
+  &:hover .btn-text{
+    color: color(secondary);
+  }
+
+  &:hover .arrow{
+    transform: translateX(1rem);
+  }
+  &:hover .arrow-line-1{
+    width: 2rem;
+  }
+
   &-bg{
      width: 4rem;
      height: 4rem;
@@ -14,14 +29,17 @@
      border-radius: 5rem ;
     position: absolute;
     left: 0;
+    transition: width .2s ;
   }
   &-text{
     font-size: size(xs);
     text-transform: uppercase;
     color: color(primary);
+    z-index: 10;
   }
   .arrow{
     @include flexPosition;
+    transition: transform .2s ;
 
     &-line {
       height: .2rem;
@@ -32,8 +50,9 @@
   }
    
     &-line-1{
-      width: 2rem;
+      width: 0;
       transform: translateX(-0.7rem);
+      transition: width .2s ;
     }
    
     &-line-2 {
