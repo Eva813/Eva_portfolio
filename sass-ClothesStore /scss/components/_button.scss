@@ -2,7 +2,7 @@
   width: 16rem;
   height: 4rem;
   text-decoration: none;
-   border:.1rem solid  #000;
+  //  border:.1rem solid  #000;
   position: relative;
   @include flexPosition(space-around);
 
@@ -27,18 +27,26 @@
       height: .2rem;
       background-color: color(secondary);
       position: absolute;
+      //將x變成arrow > ;因預設原點是在center，所以須將原點拉到右邊，形成箭頭
+      transform-origin:right;
   }
-
+   
+    &-line-1{
+      width: 2rem;
+      transform: translateX(-0.7rem);
+    }
+   
     &-line-2 {
      
       width: 1rem;
-      transform: rotate(45deg);
+      //透過旋轉線2,線3使其成為交叉
+      transform: rotateZ(45deg);
     }
 
     &-line-3 {
      
       width: 1rem;
-      transform: rotate(-45deg);
+      transform: rotateZ(-45deg);
     }
    }
 }

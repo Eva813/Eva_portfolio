@@ -256,7 +256,6 @@ html {
   width: 16rem;
   height: 4rem;
   text-decoration: none;
-  border: .1rem solid  #000;
   position: relative;
   display: flex;
   justify-content: space-around;
@@ -279,10 +278,14 @@ html {
     .btn .arrow-line {
       height: .2rem;
       background-color: #ffe;
-      position: absolute; }
+      position: absolute;
+      transform-origin: right; }
+    .btn .arrow-line-1 {
+      width: 2rem;
+      transform: translateX(-0.7rem); }
     .btn .arrow-line-2 {
       width: 1rem;
-      transform: rotate(45deg); }
+      transform: rotateZ(45deg); }
     .btn .arrow-line-3 {
       width: 1rem;
-      transform: rotate(-45deg); }
+      transform: rotateZ(-45deg); }
