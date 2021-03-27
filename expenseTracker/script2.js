@@ -15,21 +15,23 @@ $(document).ready(function () {
     const amount_val = $('#amount').val();
     let id = generateID();
 
-    addTransactions(id, text_val, amount_val, transactions);
-
     //推入陣列
     transactions.push({
       id: id,
       name: text_val,
       amount: amount_val
-    })
+    });
+
+    addTransactions(id, text_val, amount_val, transactions);
+
+
 
 
     localStorage.setItem('Transactions', JSON.stringify(transactions));
 
-
+    updateValue(transactions);
   })
-  updateValue(transactions);
+
 
 });
 
@@ -54,7 +56,7 @@ function addTransactions(id, name, amount, transactions) {
     let id = $(this).data('id');
     //console.log(id);
     deleteFromLocalstorage(transactions, id); //要記得傳入id
-
+    updateValue(transactions);
   });
 
 }
