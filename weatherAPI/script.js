@@ -2,6 +2,7 @@ let locationIndex = 5;
 $(document).ready(function (e) {
   getCity();
 
+
   //https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/287007/
   $('#selector-list').change(function () {
     $('.msg').text('別忘了按下SUBMIT');
@@ -28,6 +29,12 @@ function getCity() {
         opt.html(data.records.locations[0].location[i].locationName);
         selectCity.append(opt);
       }
+      //設置一開始預設為雲林縣時，就抓取該預設城鎮的天氣資料
+      let selectedCityIndex = $('#selector-list').get(0).selectedIndex;
+      getWeather(data, selectedCityIndex);
+      weekWeather(data, selectedCityIndex);
+
+
       $('button').click(function (e) {
         e.preventDefault();
         clear();
