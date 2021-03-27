@@ -54,10 +54,19 @@
        padding: 1rem;
      }
 
+     @include response(sm){
+            background-color: transparent;
+            border: none;
+          }
+
      &-heading{
           font-size: size(xl);
           @include response(lg){
             font-size: size(md);
+          }
+
+          @include response(sm){
+            display: none;
           }
      };
      &-price{
@@ -66,6 +75,9 @@
          margin: 1rem 0;
           @include response(lg){
             font-size: size(sm);
+          }
+          @include response(sm){
+            display: none;
           }
 
          span{
@@ -83,6 +95,10 @@
 
        @include response(lg){
             padding: .2rem .5rem;
+          }
+        @include response(sm){
+            padding: .5rem .7rem;
+            width: 7rem;
           }
      }
    }

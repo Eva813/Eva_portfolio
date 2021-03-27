@@ -58,4 +58,14 @@
       @content;
     }
   }
+  @if($breakpoint == md){
+    @media (max-width:760px) {
+      @content;
+    }
+  }
+   @if($breakpoint == sm){
+    @media (max-width:560px) {
+      @content;
+    }
+  }
 }
