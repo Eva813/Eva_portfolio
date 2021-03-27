@@ -1,5 +1,5 @@
 .heading{
-  grid-column: 4/7;
+  grid-column: 1/-1;  //(原本為4/7)為使標題不折行
   grid-row: 2/3;
   text-align: center;
   &-text{
@@ -9,4 +9,5 @@
     letter-spacing: 0.5rem;
 
   }
+
 }

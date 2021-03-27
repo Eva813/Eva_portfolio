@@ -50,13 +50,23 @@
      transition: all .7s .3s;
      //.7s(全部時間), .3s(延遲時間)
 
+     @include response(lg){
+       padding: 1rem;
+     }
+
      &-heading{
           font-size: size(xl);
+          @include response(lg){
+            font-size: size(md);
+          }
      };
      &-price{
          font-size: size(lg);
          font-weight: 300;
          margin: 1rem 0;
+          @include response(lg){
+            font-size: size(sm);
+          }
 
          span{
            font-weight: 600;
@@ -70,6 +80,10 @@
        padding: .5rem 1rem;
        border: .1rem solid color(quaternary);
        background-color: lighten(color(primary),20%);
+
+       @include response(lg){
+            padding: .2rem .5rem;
+          }
      }
    }
 }

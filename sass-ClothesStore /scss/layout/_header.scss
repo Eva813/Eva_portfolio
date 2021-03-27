@@ -2,7 +2,7 @@
   grid-column: 1/-1; //1/11 (表示佔了第10欄)
   grid-row: 1/2;//佔第一列
   display: grid;
-  grid-template-columns: 1fr repeat(7,minmax(min-content,16rem)) 1fr;
+  grid-template-columns: minmax(10rem,1fr) repeat(7,minmax(min-content,16rem)) minmax(10rem,1fr);
   grid-template-rows: repeat(3,min-content);
  grid-gap: 2rem;
  z-index: 100;

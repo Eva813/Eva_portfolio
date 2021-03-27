@@ -6,6 +6,13 @@
   width: 100%;
   height: 80vh;
 
+  @include response(xl){
+    height:70vh ;
+  }
+
+  @include response(lg){
+    height:60vh ;
+  }
   &-slide{
     //使圖片、文字都放在同一個位置
   position: absolute;
@@ -34,6 +41,10 @@
       left: 6rem;
       max-width: 40rem;
       padding: 5rem;
+
+      @include response(lg){
+        padding: 2rem ;
+        }
 
       h2{
         font-size: size(xl)+1.2rem;
