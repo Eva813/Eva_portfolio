@@ -70,7 +70,7 @@ body {
 }
 
 .text-block__text{
-  padding:0 1rem 0 1.5rem;
+  padding:0 2.5rem;
 }
 .text-block-img{
   height: 400px;
@@ -109,7 +109,7 @@ body {
 .signup {
     position: relative;
     background-color: #343a40;
-    background: url(./img/01.jpg) no-repeat center center;
+    background: url(./img/foot.jpg) no-repeat center center;
     background-size: cover;
     padding: 6.25em 0;
 }
@@ -129,4 +129,18 @@ body {
 
 .signup__text__form {
     margin: 1.25em 0;
+}
+
+
+footer {
+    background-color: #333;
+    padding: 1.25em;
+}
+.footer__title {
+    color: white;
+    font-weight: 900;
+    margin-bottom: 0;
+}
+.footer__p {
+    color: white;
 }
