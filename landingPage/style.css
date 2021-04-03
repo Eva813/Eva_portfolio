@@ -49,3 +49,33 @@ body {
   padding-top: 5rem;
   font-size: 1.25rem;
 }
+
+/* 圖片區 */
+.container-fluid {
+    padding: 0;
+}
+
+/* 使col的padding消失 */
+
+ .container-fluid > .row > [class*="col-"], .container-fluid > .row > .col {
+    padding-right: 0;
+    padding-left: 0;
+} 
+
+.text-block{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-block__text{
+  padding:0 1rem 0 1.5rem;
+}
+.text-block-img{
+  height: 400px;
+  width: 100%;
+  background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
