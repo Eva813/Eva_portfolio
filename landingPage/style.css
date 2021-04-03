@@ -79,3 +79,25 @@ body {
     background-size: cover !important;
     background-repeat: no-repeat !important;
 }
+
+/* 人員介紹 */
+.face {
+    margin: 0 0.9375em;
+   
+}
+.face__img{
+  display: block;
+  width: 70%;
+  border-radius: 50%;
+      margin: 0 auto;
+}
+
+
+.face__name {
+    text-align: center;
+    margin-top: 0.9375em;
+    font-size: 20px;
+}
+.face__role {
+    text-align: center;
+}
