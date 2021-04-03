@@ -1,0 +1,17 @@
+.header{
+   background: url("./img/01.jpg") no-repeat center center;
+   background-size: cover;
+   position: relative;
+  padding: 12.5em 0;
+}
+.header__overaly{
+  width: 100%;
+  height: 100%;
+  background-color: #212529;
+  position: absolute;
+  top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+ .header__text__h1 {
+    color: white; }
