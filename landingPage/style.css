@@ -1,3 +1,10 @@
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
 .header{
    background: url("./img/01.jpg") no-repeat center center;
    background-size: cover;
@@ -15,3 +22,30 @@
 }
  .header__text__h1 {
     color: white; }
+
+
+.icon-wrapper  {
+    text-align: center;
+    margin: 3rem 0;
+    cursor: pointer;
+}
+
+
+.icon-wrapper__icon{
+  position: absolute;
+    right: 0;
+    left: 0;
+    font-size: 4.3rem; 
+    font-weight: 900;
+    color: #007bff;
+    transition: all .1s ;
+  }
+
+.icon-wrapper__icon:hover {
+   font-size: 4.4rem;
+}
+
+.icon-wrapper__h2{
+  padding-top: 5rem;
+  font-size: 1.25rem;
+}
