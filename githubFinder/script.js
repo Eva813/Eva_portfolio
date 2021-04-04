@@ -14,7 +14,7 @@ $(document).ready(function () {
 
 function getGithubUser(username) {
 
-  let url = `https://api.github.com/users/${username}?access_token=aec2689d3f9be4d85108db41496c1670e16e10ca`;
+  let url = `https://api.github.com/users/${username}?access_token=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`;
   $.ajax({
     type: "get",
     url: url,
@@ -95,7 +95,7 @@ function getUserRepo(user) {
     url: url,
     dataType: "json",
     success: function (data) {
-      console.log(data)
+      //console.log(data)
       showRepo(data);
     }
   });
