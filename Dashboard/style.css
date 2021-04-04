@@ -59,8 +59,10 @@ body {
 }
 
 /* 記得在body設display:flex */
+/* https://pjchender.blogspot.com/2015/04/css-3vh-vw.html */
 .top-bar{
-     width: 92rem;
+  /* vw表示的是view width，也就是螢幕可是範圍寬度的百分比 ，350px是指aside nav的寬度*/
+    width: calc(100vw - 350px);
     background: rgb(234, 234, 234);
     padding: 10px;
 }
@@ -75,4 +77,11 @@ input[text]{
 }
 .form-group {
     margin-bottom: 0rem; 
+}
+
+
+
+
+.main-content{
+  padding:2.5rem ;
 }
