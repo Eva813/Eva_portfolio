@@ -9,11 +9,73 @@
 
 
 
-  <title>Document</title>
+  <title>Admin Dashboard</title>
 </head>
 
 <body>
+  <!-- 左側邊欄 -->
+  <aside class="aside">
+    <div class="aside__brand">
+      <h1 class="aside__brand__h1">Admin</h1>
+    </div>
+    <!-- nav flex-column -->
+    <ul class="nav flex-column aside-nav">
+      <li class="nav-item aside-nav__li">
+        <a href="#" class="nav-link aside-nav__li__a">Dashboard</a>
+      </li>
+      <!-- 第二個（包含下拉式選單） -->
+      <li class="nav-item aside-nav__li" data-toggle="collapse" href="#componentsCollapse" role="button"
+        aria-expanded="false" aria-controls="componentsCollapse">
+        <a class="nav-link aside-nav__li__a" href="#">Components</a>
+        <i class="fas fa-caret-down aside-nav__li__i"></i>
+        <!-- 下拉下面的選項 -->
+        <div class="collapse aside-nav__li__collapse" id="componentsCollapse">
+          <ul class="nav flex-column aside-nav__li__collapse__nav">
+            <li class="nav-item aside-nav__li__collapse__nav__li">
+              <a class="nav-link aside-nav__li__collapse__nav__li__a " href="#0">Cards</a>
+            </li>
+            <li class="nav-item aside-nav__li__collapse__nav__li">
+              <a class="nav-link aside-nav__li__collapse__nav__li__a" href="#0">Tables</a>
+            </li>
+            <li class="nav-item aside-nav__li__collapse__nav__li">
+              <a class="nav-link aside-nav__li__collapse__nav__li__a" href="#0">Forms</a>
+            </li>
 
+          </ul>
+        </div>
+      </li>
+      <!-- 第三個layout -->
+      <li class="nav-item aside-nav__li" data-toggle="collapse" href="#layoutCollapse" role="button"
+        aria-expanded="false" aria-controls="layoutCollapse">
+        <a href="#" class="nav-link aside-nav__li__a">Layout</a>
+        <i class="fas fa-caret-down aside-nav__li__i"></i>
+        <!-- layout的下拉選單 -->
+        <div class="collapse aside-nav__li__collapse" id="layoutCollapse">
+          <ul class="nav flex-column aside-nav__li__collapse__nav">
+            <li class="nav-item aside-nav__li__collapse__nav__li">
+              <a class="nav-link aside-nav__li__collapse__nav__li__a " href="#0">Blank</a>
+            </li>
+            <li class="nav-item aside-nav__li__collapse__nav__li">
+              <a class="nav-link aside-nav__li__collapse__nav__li__a" href="#0">Content</a>
+            </li>
+            <li class="nav-item aside-nav__li__collapse__nav__li">
+              <a class="nav-link aside-nav__li__collapse__nav__li__a" href="#0">404</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item aside-nav__li">
+        <a href="#" class="nav-link aside-nav__li__a">About</a>
+
+      </li>
+      <li class="nav-item aside-nav__li">
+        <a class="nav-link aside-nav__li__a" href="#">Documentation</a>
+      </li>
+
+
+    </ul>
+
+  </aside>
 
 
   <script src="./jquery-3.5.1.min.js"></script>
