@@ -14,7 +14,7 @@ $(document).ready(function () {
 
 function getGithubUser(username) {
 
-  let url = `https://api.github.com/users/${username}?access_token=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`;
+  let url = `https://api.github.com/users/${username}?access_token=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`;
   $.ajax({
     type: "get",
     url: url,
