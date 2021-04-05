@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+body {
+    font-family: Ubuntu, sans-serif;
+    display: flex;
+}
+
+.aside{
+  width: 350px;
+ height: 100vh;
+  background-color: #19202C;
+}
+.aside__brand{
+ 
+  text-align: center;
+  padding: 2.5rem 0;
+  
+}
+
+.flex-column {
+    flex-direction: column !important;
+}
+.aside__brand__h1{
+   color: #ffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+
+
+.aside-nav__li__a{
+  /* display: inline-block; */
+  color:#ffff;
+ border-left:3px solid transparent;
+ transition: all .2s ease;
+}
+.aside-nav__li__a:hover{
+   color:#ffff;
+  border-left:3px solid red;
+  background-color: rgba(255, 255, 255, .1);
+}
+
+.aside-nav__li__i{
+  color: #ffff;
+  float: right !important;
+      margin-top: -30px;
+    margin-right: 16px;
+}
+
+.aside-nav__li__collapse{
+  background-color:rgba(255, 255, 255, .1) ;
+}
+.aside-nav__li__collapse__nav__li__a{
+  color: #ffff;
+  transition: all .2s ease;
+}
+.aside-nav__li__collapse__nav__li__a:hover{
+  color:#ffff;
+  background: rgb(63, 69, 78);
+}
+
+/* 記得在body設display:flex */
+/* https://pjchender.blogspot.com/2015/04/css-3vh-vw.html */
+.top-bar{
+  /* vw表示的是view width，也就是螢幕可是範圍寬度的百分比 ，350px是指aside nav的寬度*/
+    width: calc(100vw - 350px);
+    background: rgb(234, 234, 234);
+    padding: 10px;
+}
+
+.top-bar__search {
+    width: 50%;
+}
+
+input[text]{
+  line-height: 2;
+  margin: auto 0;
+}
+.form-group {
+    margin-bottom: 0rem; 
+}
+
+
+
+
+.main-content{
+  padding:2.5rem ;
+}
