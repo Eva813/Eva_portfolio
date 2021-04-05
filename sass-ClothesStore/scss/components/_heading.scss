@@ -1,0 +1,13 @@
+.heading{
+  grid-column: 1/-1;  //(原本為4/7)為使標題不折行
+  grid-row: 2/3;
+  text-align: center;
+  &-text{
+    font-family: 'Great Vibes',cursive;
+    font-size: size(xl)*2; //結果為6rem
+    font-weight: lighter;
+    letter-spacing: 0.5rem;
+
+  }
+
+}
