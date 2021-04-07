@@ -1,3 +1,7 @@
 @import "vendor/index";
 @import "utils/index";
 @import "partials/index";
+
+h1{
+  color:$main-color;
+}
