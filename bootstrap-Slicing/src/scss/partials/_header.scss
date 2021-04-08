@@ -1,0 +1,16 @@
+.navbar{
+  height: 115px !important;
+  background: $black;
+}
+.navbar-brand img{
+  height: 25px;
+}
+
+nav .active >.nav-link{
+  color: $green;
+}
+.nav-expand-lg .navbar-nav .nav-link{
+  padding-right: 1rem;
+  padding-left: 1rem;
+  transition: all .25s;
+}

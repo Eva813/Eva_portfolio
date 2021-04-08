@@ -11539,3 +11539,18 @@ readers do not read off random characters that represent icons */
 .fas {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
+
+.navbar {
+  height: 115px !important;
+  background: #282A2D; }
+
+.navbar-brand img {
+  height: 25px; }
+
+nav .active > .nav-link {
+  color: #8DB546; }
+
+.nav-expand-lg .navbar-nav .nav-link {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  transition: all .25s; }
