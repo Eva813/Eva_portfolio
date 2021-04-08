@@ -4,6 +4,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800|Roboto:400,700,900&display=swap");
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar; }
@@ -11554,3 +11555,29 @@ nav .active > .nav-link {
   padding-right: 1rem;
   padding-left: 1rem;
   transition: all .25s; }
+
+.header-banner {
+  height: 700px;
+  background: url(../../../img/banner-headings/banner-img-min.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: none;
+  background-position-y: -200px;
+  position: relative;
+  display: flex;
+  align-items: center; }
+  .header-banner__icons {
+    position: absolute;
+    bottom: 90px;
+    right: 158px; }
+  .header-banner__text {
+    color: white; }
+    .header-banner__text__h1 {
+      font-family: 'Open Sans',sans-serif;
+      font-weight: 300;
+      font-size: 70px;
+      margin-bottom: 0px; }
+    .header-banner__text__p {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 1; }
