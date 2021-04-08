@@ -11593,9 +11593,31 @@ nav .active > .nav-link {
   font-size: 35px;
   margin-bottom: 100px; }
 
+.banner-heading {
+  height: 450px;
+  display: flex;
+  align-items: center; }
+  .banner-heading__text {
+    color: white; }
+    .banner-heading__text__h2 {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      font-size: 70px;
+      margin-bottom: 0; }
+    .banner-heading__text__p {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 1; }
+
+.pricing-table-header {
+  background: url(../../../img/banner-headings/pricing-img-min.jpg) no-repeat center center;
+  background-size: cover; }
+
 .service-icons {
   text-align: center;
-  color: white; }
+  color: white;
+  font-family: 'Open Sans', sans-serif; }
   .service-icons__img {
     background: #313338;
     position: relative;
