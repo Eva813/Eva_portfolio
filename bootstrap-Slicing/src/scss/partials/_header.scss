@@ -20,15 +20,15 @@ nav .active >.nav-link{
   background: url(../../../img/banner-headings/banner-img-min.jpg) no-repeat center center  ;
   background-size: cover;
   background-attachment: $bg-attachment;
-    background-position-y: -200px;
+    // background-position-y: -200px;
   position: relative;
   display: flex;
   align-items: center;
 
   &__icons{
     position: absolute;
-    bottom: 90px;
-    right: 158px;
+    bottom: 0px;
+    right: 60px;
   }
   &__text{
     color: white;

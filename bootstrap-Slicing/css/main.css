@@ -11541,6 +11541,10 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
 
+#services {
+  background: #282A2D;
+  padding: 100px 0; }
+
 .navbar {
   height: 115px !important;
   background: #282A2D; }
@@ -11561,14 +11565,13 @@ nav .active > .nav-link {
   background: url(../../../img/banner-headings/banner-img-min.jpg) no-repeat center center;
   background-size: cover;
   background-attachment: none;
-  background-position-y: -200px;
   position: relative;
   display: flex;
   align-items: center; }
   .header-banner__icons {
     position: absolute;
-    bottom: 90px;
-    right: 158px; }
+    bottom: 0px;
+    right: 60px; }
   .header-banner__text {
     color: white; }
     .header-banner__text__h1 {
@@ -11581,3 +11584,11 @@ nav .active > .nav-link {
       font-weight: 600;
       font-size: 40px;
       line-height: 1; }
+
+.regular-heading h2 {
+  color: white;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 35px;
+  margin-bottom: 100px; }
