@@ -11592,3 +11592,21 @@ nav .active > .nav-link {
   font-weight: 300;
   font-size: 35px;
   margin-bottom: 100px; }
+
+.service-icons {
+  text-align: center;
+  color: white; }
+  .service-icons__img {
+    background: #313338;
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; }
+  .service-icons__h3 {
+    margin-top: 30px; }
+  .service-icons__p {
+    font-size: 14px; }
