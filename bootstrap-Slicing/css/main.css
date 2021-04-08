@@ -11541,7 +11541,7 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
 
-#services {
+#services, #pricing-tables {
   background: #282A2D;
   padding: 100px 0; }
 
@@ -11596,7 +11596,8 @@ nav .active > .nav-link {
 .banner-heading {
   height: 450px;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  background-attachment: none; }
   .banner-heading__text {
     color: white; }
     .banner-heading__text__h2 {
@@ -11611,8 +11612,7 @@ nav .active > .nav-link {
       line-height: 1; }
 
 .pricing-table-header {
-  background: url(../../../img/banner-headings/pricing-img-min.jpg) no-repeat center center;
-  background-size: cover; }
+  background: url(../../../img/banner-headings/pricing-img-min.jpg) no-repeat center center/cover; }
 
 .service-icons {
   text-align: center;

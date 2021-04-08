@@ -14,7 +14,7 @@
    display: flex;
    align-items: center;
    background-attachment:$bg-attachment;
-   background-size: cover;
+  
 
    &__text{
      color: white;
@@ -34,6 +34,6 @@
  }
 
  .pricing-table-header{
-   background-image: url(../../../img/banner-headings/pricing-img-min.jpg) no-repeat center center  ;
+   background: url(../../../img/banner-headings/pricing-img-min.jpg) no-repeat center center /cover ;
 
  }
