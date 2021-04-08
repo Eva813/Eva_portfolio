@@ -11541,7 +11541,7 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
 
-#services, #pricing-tables {
+#services, #pricing-tables, #testimonials {
   background: #282A2D;
   padding: 100px 0; }
 
@@ -11613,6 +11613,27 @@ nav .active > .nav-link {
 
 .pricing-table-header {
   background: url(../../../img/banner-headings/pricing-img-min.jpg) no-repeat center center/cover; }
+
+.striped-heading {
+  position: relative;
+  width: 100%;
+  background: #666666;
+  height: 2px;
+  display: flex;
+  justify-content: center; }
+  .striped-heading h2 {
+    position: relative;
+    top: -15px;
+    background: #282A2D;
+    display: inline-block;
+    padding: 0px 35px;
+    color: white;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    text-transform: uppercase;
+    height: 35px; }
 
 .service-icons {
   text-align: center;
@@ -11693,3 +11714,20 @@ nav .active > .nav-link {
     background: #7fa33f;
     box-shadow: 0 4px 0 0 #627e31;
     text-decoration: none; }
+
+.testimonials {
+  margin-top: 50px;
+  display: flex;
+  color: #666666;
+  font-family: 'Open Sans', sans-serif;
+  justify-content: center; }
+  .testimonials__q-l, .testimonials__q-r {
+    font-size: 80px;
+    line-height: .5; }
+  .testimonials__text {
+    text-align: center;
+    width: 50%;
+    padding: 0 35px; }
+    .testimonials__text span {
+      color: #8DB546;
+      text-transform: uppercase; }

@@ -37,3 +37,30 @@
    background: url(../../../img/banner-headings/pricing-img-min.jpg) no-repeat center center /cover ;
 
  }
+
+
+ .striped-heading  {
+    position: relative;
+    width: 100%;
+    background:$gray2;
+    height: 2px;
+    // 透過建立一個背景色彩，並設定高度，讓此部分，被h2所覆蓋，因而剩下左右兩邊的線
+    display: flex;
+    justify-content: center;
+    h2 {
+
+        position: relative;
+        top: -15px;
+         background: $black;
+        display: inline-block;
+        padding: 0px 35px;
+        color: white;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: 25px;
+        text-transform: uppercase;
+        height: 35px;
+
+    }
+}
