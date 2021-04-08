@@ -11632,3 +11632,44 @@ nav .active > .nav-link {
     margin-top: 30px; }
   .service-icons__p {
     font-size: 14px; }
+
+.pricing-table {
+  background: #313338;
+  border-radius: 5px;
+  margin: 0 20px;
+  padding-bottom: 30px; }
+  .pricing-table__heading {
+    padding: 25px 0;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-weight: 300;
+    font-size: 28px; }
+  .pricing-table__price {
+    background-color: #8DB546;
+    font-family: 'Open Sans', sans-serif;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 0 0 #709038;
+    padding: 20px 0;
+    margin-bottom: 25px; }
+    .pricing-table__price span {
+      color: white;
+      font-weight: 700;
+      font-family: 'Roboto', sans-serif;
+      font-size: 22px; }
+  .pricing-table__option {
+    text-align: center;
+    color: #B6B6B7;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; }
+  .pricing-table--white {
+    background: #F4F4F4; }
+    .pricing-table--white__heading {
+      color: #282A2D; }
+    .pricing-table--white__option {
+      color: #666666; }
+      .pricing-table--white__option span {
+        color: #969696; }
