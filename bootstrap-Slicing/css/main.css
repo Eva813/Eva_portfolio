@@ -11673,3 +11673,23 @@ nav .active > .nav-link {
       color: #666666; }
       .pricing-table--white__option span {
         color: #969696; }
+
+.cst-btn {
+  color: white;
+  background: #8DB546;
+  display: block;
+  margin: 40px auto  0 auto;
+  width: 80%;
+  box-shadow: 0 4px 0 0 #709038;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  transition: all .25s; }
+  .cst-btn:hover {
+    color: white;
+    background: #7fa33f;
+    box-shadow: 0 4px 0 0 #627e31;
+    text-decoration: none; }
