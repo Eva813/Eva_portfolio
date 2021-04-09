@@ -11559,7 +11559,7 @@ readers do not read off random characters that represent icons */
   height: 25px; }
 
 nav .active > .nav-link {
-  color: #8DB546; }
+  color: #8DB546 !important; }
 
 .nav-expand-lg .navbar-nav .nav-link {
   padding-right: 1rem;
@@ -11767,6 +11767,7 @@ nav .active > .nav-link {
   display: block;
   padding: 10px 40px;
   border-radius: 5px;
+  margin-bottom: 20px;
   margin-top: 20px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;

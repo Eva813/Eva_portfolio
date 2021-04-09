@@ -6,8 +6,8 @@
   height: 25px;
 }
 
-nav .active >.nav-link{
-  color: $green;
+nav .active>.nav-link{
+  color: $green !important;
 }
 .nav-expand-lg .navbar-nav .nav-link{
   padding-right: 1rem;
