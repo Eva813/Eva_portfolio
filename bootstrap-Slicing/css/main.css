@@ -11541,7 +11541,7 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
 
-#services, #pricing-tables, #testimonials {
+#services, #pricing-tables, #testimonials, #contact {
   background: #282A2D;
   padding: 100px 0; }
 
@@ -11721,6 +11721,25 @@ nav .active > .nav-link {
     box-shadow: 0 4px 0 0 #627e31;
     text-decoration: none; }
 
+.submit-btn {
+  background: #8DB546;
+  color: white;
+  display: block;
+  padding: 10px 40px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  box-shadow: 0 4px 0 0 #709038;
+  transition: all .25s;
+  border: none; }
+  .submit-btn:hover {
+    color: white;
+    background: #7fa33f;
+    box-shadow: 0 4px 0 0 #627e31;
+    text-decoration: none; }
+
 .testimonials {
   margin-top: 50px;
   display: flex;
@@ -11737,3 +11756,25 @@ nav .active > .nav-link {
     .testimonials__text span {
       color: #8DB546;
       text-transform: uppercase; }
+
+.form {
+  margin-top: -50px; }
+  .form__h3 {
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    color: white; }
+    .form__h3 + div {
+      background: #666666;
+      height: 2px;
+      margin-bottom: 25px; }
+  .form input, .form textarea {
+    border-radius: 0;
+    background: #222327;
+    border: none; }
+  .form textarea {
+    width: 100%;
+    height: 150px; }
+  .form p {
+    color: #666666;
+    margin-bottom: 0px; }
