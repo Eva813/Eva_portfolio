@@ -11545,6 +11545,9 @@ readers do not read off random characters that represent icons */
   background: #282A2D;
   padding: 100px 0; }
 
+#testimonials {
+  padding-top: 0px; }
+
 .navbar {
   height: 115px !important;
   background: #282A2D; }
@@ -11613,6 +11616,9 @@ nav .active > .nav-link {
 
 .pricing-table-header {
   background: url(../../../img/banner-headings/pricing-img-min.jpg) no-repeat center center/cover; }
+
+.contact-header {
+  background: url(../../../img/banner-headings/6000px-img-min.jpg) no-repeat center center/cover; }
 
 .striped-heading {
   position: relative;
