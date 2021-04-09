@@ -11613,12 +11613,38 @@ nav .active > .nav-link {
       font-weight: 600;
       font-size: 40px;
       line-height: 1; }
+    .banner-heading__text__soc li {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      list-style: none;
+      background: #282A2D;
+      cursor: pointer; }
+      .banner-heading__text__soc li span {
+        background: #282A2D;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        margin: 5px; }
+        .banner-heading__text__soc li span i {
+          color: #969696; }
+      .banner-heading__text__soc li:hover span {
+        background: #8DB546; }
+        .banner-heading__text__soc li:hover span i {
+          color: white; }
 
 .pricing-table-header {
   background: url(../../../img/banner-headings/pricing-img-min.jpg) no-repeat center center/cover; }
 
 .contact-header {
   background: url(../../../img/banner-headings/6000px-img-min.jpg) no-repeat center center/cover; }
+
+.social-header {
+  background: url(../../../img/banner-headings/soc-img-min.jpg) no-repeat center center/cover; }
 
 .striped-heading {
   position: relative;
