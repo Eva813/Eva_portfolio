@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var deploy = require('gulp-gh-pages');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -42,10 +41,10 @@ gulp.task('sass', function () {
         .pipe(minifycss());
 });
 
-// gulp.task('html', function () {
-//     gulp.src('./*.html')
-//         .pipe(gulp.dest('./'));
-// });
+gulp.task('html', function () {
+    gulp.src('./*.html')
+        .pipe(gulp.dest('./'));
+});
 
 gulp.task('browser-sync', function () {
     browserSync.init(["css/*.css", "js/*.js"], {
@@ -55,17 +54,9 @@ gulp.task('browser-sync', function () {
     });
 });
 
-gulp.task('deploy', function () {
-    return gulp.src("./**/*")
-        .pipe(deploy({
-            remoteUrl: "https://github.com/Eva813/Eva813.github.io.git",
-            branch: "gh-pages"
-        }))
-});
-
 gulp.task('default', ['sass', 'browser-sync'], function () {
     gulp.watch("src/scss/**/*.scss", ['sass']).on("change", reload);
-    // gulp.watch("./*.html", ['html']).on("change", reload);
+    gulp.watch("./*.html", ['html']).on("change", reload);
     gulp.watch("src/js/*.js", ['scripts']).on("change", reload);
 });
 
