@@ -8,8 +8,6 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify-es').default;
 
-
-
 gulp.task('scripts', function () {
     return gulp.src([
         /* Add your JS files here, they will be combined in this order */
@@ -27,13 +25,8 @@ gulp.task('scripts', function () {
         'node_modules/bootstrap/js/dist/tooltip.js',
         'node_modules/bootstrap/js/dist/popover.js',
         'node_modules/bootstrap/js/dist/toast.js',
-
-
-
         'src/js/main.js',
         'src/js/other.js'
-
-
     ])
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest('js'))
@@ -48,10 +41,12 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./css'))
         .pipe(minifycss());
 });
+
 gulp.task('html', function () {
     gulp.src('./*.html')
         .pipe(gulp.dest('./'));
 });
+
 gulp.task('browser-sync', function () {
     browserSync.init(["css/*.css", "js/*.js"], {
         server: {
@@ -67,7 +62,6 @@ gulp.task('deploy', function () {
             branch: "gh-pages"
         }))
 });
-
 
 gulp.task('default', ['sass', 'browser-sync'], function () {
     gulp.watch("src/scss/**/*.scss", ['sass']).on("change", reload);
