@@ -11,7 +11,7 @@
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -55,6 +55,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
+          <!-- 使用jumbotron -->
           <div class="jumbotron jumbotron-fluid">
             <div class="container">
               <h1 class="display-4">Image Gallery</h1>
@@ -68,10 +69,80 @@
 
   </header>
 
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Image gallery</h1>
+          <!-- view-toggler -->
+          <span class="view-toggler"> <a href="#0" id="grid" class="active">Grid</a> <a href="#0" id="column">Column</a>
+          </span>
+          <hr>
+        </div>
+      </div>
+    </div>
+
+    <!-- 圖片區的設置 -->
+    <section class="container">
+      <!-- 一列，放4\4\4\就會3個、3個一區 -->
+      <div class="row" id="gallery">
+        <div class="col-md-4">
+          <img src="https://source.unsplash.com/400x400/?car" alt="" class="img-thumbnail">
+        </div>
+
+        <div class="col-md-4">
+          <img src="https://source.unsplash.com/400x400/?book" alt="" class="img-thumbnail">
+        </div>
+        <div class="col-md-4">
+          <img src="https://source.unsplash.com/400x400/?house" alt="" class="img-thumbnail">
+        </div>
+        <div class="col-md-4">
+          <img src="https://source.unsplash.com/400x400/?door" alt="" class="img-thumbnail">
+        </div>
+        <div class="col-md-4">
+          <img src="https://source.unsplash.com/400x400/?window" alt="" class="img-thumbnail">
+        </div>
+        <div class="col-md-4">
+          <img src="https://source.unsplash.com/400x400/?cart" alt="" class="img-thumbnail">
+        </div>
+        <div class="col-md-4">
+          <img src="https://source.unsplash.com/400x400/?store" alt="" class="img-thumbnail">
+        </div>
+        <div class="col-md-4">
+          <img src="https://source.unsplash.com/400x400/?apple" alt="" class="img-thumbnail">
+        </div>
+        <div class="col-md-4">
+          <img src="https://source.unsplash.com/400x400/?flower" alt="" class="img-thumbnail">
+        </div>
+
+      </div>
+    </section>
+
+
+  </main>
 
 
 
   <script src="js/scripts.min.js" charset="utf-8"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#grid').on('click', function () {
+        $('#gallery > div').addClass('col-md-4').removeClass('col-md-12')
+      })
+      $(this).addClass('active')
+      $('#column').removeClass('active')
+
+
+    })
+
+    $('#column').on('click', function () {
+      $('#gallery > div').removeClass('col-md-4').addClass('col-md-12')
+      $(this).addClass('active')
+      $('#grid').removeClass('active')
+    })
+
+  </script>
 
 </body>
 
