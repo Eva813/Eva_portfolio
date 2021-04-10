@@ -59,11 +59,17 @@ gulp.task('browser-sync', function () {
     });
 });
 
+
+gulp.task('deploy', function () {
+    return gulp.src('./public/**/*')
+        .pipe(ghPages());
+});
 // //Deploy to ghPages Task
 // gulp.task('ghpages', ['build'], function () {
 //     return gulp.src(dirs.dest + '/**/*')
 //         .pipe(ghPages());
 // });
+
 
 gulp.task('default', ['sass', 'browser-sync'], function () {
     gulp.watch("src/scss/**/*.scss", ['sass']).on("change", reload);
