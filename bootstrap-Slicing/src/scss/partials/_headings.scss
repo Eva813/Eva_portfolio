@@ -1,0 +1,125 @@
+ .regular-heading{
+    h2{
+      color: white;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      font-size: 35px;
+      margin-bottom: 100px;
+    }
+ }
+
+ .banner-heading{
+   height: 450px;
+   display: flex;
+   align-items: center;
+   background-attachment:$bg-attachment;
+  
+
+   &__text{
+     color: white;
+     &__h2{
+       font-family: 'Open Sans', sans-serif;
+       font-weight: 300;
+       font-size: 70px;
+       margin-bottom: 0;
+     }
+     &__p{
+         font-family: 'Open Sans', sans-serif;
+       font-weight: 600;
+       font-size: 40px;
+       line-height: 1;
+     }
+
+    &__soc{
+      li{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+       list-style: none;
+        background: $black;
+        cursor: pointer;
+        span{
+          background: $black;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          border-radius: 50%;
+          justify-content: center;
+          align-items: center;
+          margin: 5px;
+          i {
+           color: $gray3
+            }
+        }
+        &:hover span{
+          background: $green;
+          i{
+            color: white;
+          }
+        }
+      }
+
+    }
+
+   }
+ }
+
+ .pricing-table-header{
+   background: url(../../../img/banner-headings/pricing-img-min.jpg) no-repeat center center /cover ;
+
+ }
+  .contact-header{
+   background: url(../../../img/banner-headings/6000px-img-min.jpg) no-repeat center center /cover ;
+
+ }
+
+ .social-header{
+    background: url(../../../img/banner-headings/soc-img-min.jpg) no-repeat center center /cover ;
+ }
+
+
+ .striped-heading  {
+    position: relative;
+    width: 100%;
+    background:$gray2;
+    height: 2px;
+    // 透過建立一個背景色彩，並設定高度，讓此部分，被h2所覆蓋，因而剩下左右兩邊的線
+    display: flex;
+    justify-content: center;
+    h2 {
+
+        position: relative;
+        top: -15px;
+         background: $black;
+        display: inline-block;
+        padding: 0px 35px;
+        color: white;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: 25px;
+        text-transform: uppercase;
+        height: 35px;
+
+    }
+}
+
+
+.footer {
+    &__heading {
+        &__h3 {
+            color: white;
+            text-transform: capitalize;
+            font-size: 18px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            &+div {
+                background: $gray2;
+                width: 100%;
+                height: 2px;
+            }
+        }
+    }
+}
