@@ -11,7 +11,7 @@ const calBtn = document.getElementById('calculate-wealth');
 //array 的初始化
 let data = [];
 
-
+//呼叫三次函示，會叫出三位人員
 getRandomUser();
 getRandomUser();
 getRandomUser();
@@ -54,14 +54,14 @@ function addData(newObj) {
 
 //將新創立的物件輸出呈現到畫面上(dom)
 function updateDOM(provideData = data) {
-  console.log(provideData);
+  //console.log(provideData);
   //清除main區域的div
-  main.innerHTML(`<h2><strong>Person</strong>  Wealth</h2>`);
+  main.innerHTML = `<h2><strong>Person</strong>  Wealth</h2>`;
   provideData.forEach(item => {
     const element = document.createElement('div');
     //在新div增加class
     element.classList.add('person');
-    element.innerHTML(`<strong>${item.name}</strong> ${item.money}`)
-
+    element.innerHTML = `<strong>${item.name}</strong> ${item.money}`;
+    main.appendChild(element);
   })
-}
+};
