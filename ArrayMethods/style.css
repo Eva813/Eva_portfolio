@@ -55,3 +55,10 @@ button{
   font-weight: 300;
   margin: 0 0 20px;
 }
+
+.person {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
