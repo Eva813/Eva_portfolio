@@ -71,7 +71,19 @@ function filterMillionaires() {
 
 }
 
+//calculateMoney
+function calculateMoney() {
+  const reduceArr = data.reduce((accumulator, currentValue) => {
+    //console.log(accumulator);
+    console.log(currentValue.money);
+    return accumulator += currentValue.money;
+  }, 0);
 
+
+  const totalEl = document.createElement('div');
+  totalEl.innerHTML = `<h3>Total Wealth: <strong> ${formatMoney(reduceArr)} </strong> </h3> `;
+  main.appendChild(totalEl);
+}
 
 //將新建立的物件(newUser)放入陣列中
 function addData(newObj) {
@@ -110,4 +122,4 @@ addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
 sortBtn.addEventListener('click', sortEvent);
 millionBtn.addEventListener('click', filterMillionaires);
-
+calBtn.addEventListener('click', calculateMoney);
