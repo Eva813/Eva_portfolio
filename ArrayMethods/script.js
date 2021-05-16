@@ -40,6 +40,28 @@ async function getRandomUser() {
   addData(newUser);
 }
 
+
+
+//double money 
+function doubleMoney() {
+  data = data.map(item => {
+    return { ...item, money: item.money * 2 }
+
+  });
+  console.log(data);
+  updateDOM();
+}
+
+//sortEvent
+function sortEvent() {
+  data = data.sort((a, b) => {
+    return b.money - a.money;
+  });
+  updateDOM();
+}
+
+
+
 //將新建立的物件(newUser)放入陣列中
 function addData(newObj) {
   //這裡的data是在最前面所宣告的 初始陣列
@@ -61,7 +83,19 @@ function updateDOM(provideData = data) {
     const element = document.createElement('div');
     //在新div增加class
     element.classList.add('person');
-    element.innerHTML = `<strong>${item.name}</strong> ${item.money}`;
+    element.innerHTML = `<strong>${item.name}</strong>  ${formatMoney(item.money)}`;
     main.appendChild(element);
-  })
+
+  });
 };
+
+//將回傳的隨機數字，轉換為金錢格式 -https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-strings
+function formatMoney(Money) {
+  return '$' + Money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');;
+}
+
+//設置點擊事件，按下add user，增加人
+addUserBtn.addEventListener('click', getRandomUser);
+doubleBtn.addEventListener('click', doubleMoney);
+millionBtn.addEventListener('click', sortEvent);
+

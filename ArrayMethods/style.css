@@ -25,10 +25,16 @@ aside{
   padding: 10px 20px;
   width: 250px;
   border-right: 1px solid #111;
+}
 
+aside i{
+  margin-left: 5px;
+  color: brown;
+  transition: all .1s ease-in-out;
 }
 
 button{
+  cursor: pointer;
   background-color: #fff;
   border: solid 1px #111;
   border-radius: 5px;
@@ -38,7 +44,17 @@ button{
    margin-bottom: 20px;
   font-weight: bold;
   font-size: 14px;
+  transition: all .1s ease-in-out;
 }
+button:hover{
+   background-color:#4169E1;
+   color: #fff;
+    border: none;
+}
+button:hover i{
+  color: #fff;
+}
+
 
 #main {
   flex: 1;
