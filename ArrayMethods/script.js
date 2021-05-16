@@ -57,7 +57,18 @@ function sortEvent() {
   data = data.sort((a, b) => {
     return b.money - a.money;
   });
+  //console.log(data);
   updateDOM();
+}
+
+//filterMillionaires
+function filterMillionaires() {
+  data = data.filter((item) => {
+    return item.money > 1000000;
+  });
+
+  updateDOM();
+
 }
 
 
@@ -97,5 +108,6 @@ function formatMoney(Money) {
 //設置點擊事件，按下add user，增加人
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
-millionBtn.addEventListener('click', sortEvent);
+sortBtn.addEventListener('click', sortEvent);
+millionBtn.addEventListener('click', filterMillionaires);
 
