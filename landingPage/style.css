@@ -1,0 +1,147 @@
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.header{
+   background: url("./img/01.jpg") no-repeat center center;
+   background-size: cover;
+   position: relative;
+  padding: 12.5em 0;
+}
+.header__overaly{
+  width: 100%;
+  height: 100%;
+  background-color: #212529;
+  position: absolute;
+  top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+ .header__text__h1 {
+    color: white; }
+
+/* icon區     */
+
+.icon-wrapper  {
+    text-align: center;
+    margin: 3rem 0;
+    cursor: pointer;
+}
+
+
+.icon-wrapper__icon{
+  position: absolute;
+    right: 0;
+    left: 0;
+    font-size: 4.3rem; 
+    font-weight: 900;
+    color: #007bff;
+    transition: all .1s ;
+  }
+
+.icon-wrapper__icon:hover {
+   font-size: 4.4rem;
+}
+
+.icon-wrapper__h2{
+  padding-top: 5rem;
+  font-size: 1.25rem;
+}
+
+/* 圖片區 */
+.container-fluid {
+    padding: 0;
+}
+
+/* 使col的padding消失 */
+
+ .container-fluid > .row > [class*="col-"], .container-fluid > .row > .col {
+    padding-right: 0;
+    padding-left: 0;
+} 
+
+.text-block{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-block__text{
+  padding:0 2.5rem;
+}
+.text-block-img{
+  height: 400px;
+  width: 100%;
+  background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+/* 人員介紹 */
+.face {
+    margin: 0 0.9375em;
+   
+}
+.face__img{
+  display: block;
+  width: 70%;
+  border-radius: 50%;
+      margin: 0 auto;
+}
+
+
+.face__name {
+    text-align: center;
+    margin-top: 0.9375em;
+    font-size: 20px;
+}
+.face__role {
+    text-align: center;
+}
+
+
+
+/* 登入 */
+
+.signup {
+    position: relative;
+    background-color: #343a40;
+    background: url(./img/foot.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 6.25em 0;
+}
+
+.signup__overlay{
+  width: 100%;
+  height: 100%;
+  background-color: #212529;
+  position: absolute;
+  top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+.signup__text__h1 {
+    color: white;
+}
+
+.signup__text__form {
+    margin: 1.25em 0;
+}
+
+
+footer {
+    background-color: #333;
+    padding: 1.25em;
+}
+.footer__title {
+    color: white;
+    font-weight: 900;
+    margin-bottom: 0;
+}
+.footer__p {
+    color: white;
+}
