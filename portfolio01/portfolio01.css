@@ -120,6 +120,7 @@ img{
     left: 0;
     z-index: var(--z-fixed);
     background-color: var(--first-color);
+    opacity: 0.9;
 }
 
 /*===== NAV =====*/
@@ -181,9 +182,12 @@ img{
 
 /*===== HOME =====*/
 .home{
+    
     position: relative;
-    background-color: var(--first-color);
+    /* background-color: #797979; */
     overflow: hidden;
+    /* background: url(./img/banner.jpg) center /auto 100%; */
+    background:url(./img/banner.jpg) no-repeat center center/cover ;
 }
 .home__container{
     height: calc(100vh - var(--header-height));
@@ -414,6 +418,7 @@ img{
 
     .nav{
         height: calc(var(--header-height) + 1rem);
+      
     }
     .nav__list{
         display: flex;
